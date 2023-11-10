@@ -11,8 +11,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RateRecipe {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @EmbeddedId
     RateRecipeKey id;
 
     @ManyToOne
