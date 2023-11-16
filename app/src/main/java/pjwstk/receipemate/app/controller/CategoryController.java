@@ -2,14 +2,15 @@ package pjwstk.receipemate.app.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import pjwstk.receipemate.app.service.CategoryService;
 
 @RestController
 @RequestMapping("/category")
 public class CategoryController {
 
-    private final CategoryController categoryController;
+    private final CategoryService categoryService;
 
-    public CategoryController(CategoryController categoryController) {
-        this.categoryController = categoryController;
+    public CategoryController(CategoryService categoryService) {
+        this.categoryService = categoryService;
     }
 }
