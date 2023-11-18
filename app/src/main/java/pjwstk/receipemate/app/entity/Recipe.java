@@ -46,8 +46,8 @@ public class Recipe {
     private Category category;
 
     @CreationTimestamp(source = SourceType.DB)
-    private Instant created_at;
+    private Instant createdAt;
 
     @UpdateTimestamp(source = SourceType.DB)
-    private Instant updated_at;
+    private Instant updatedAt;
 }

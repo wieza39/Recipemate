@@ -30,8 +30,8 @@ public class PopularRecipeViewRepository {
                             averageRateRecipe.getRecipe().getTimeConsuming(),
                             averageRateRecipe.getRecipe().getDifficulty(),
                             averageRateRecipe.getRecipe().getCategory(),
-                            averageRateRecipe.getRecipe().getCreated_at(),
-                            averageRateRecipe.getRecipe().getUpdated_at(),
+                            averageRateRecipe.getRecipe().getCreatedAt(),
+                            averageRateRecipe.getRecipe().getUpdatedAt(),
                             averageRateRecipe.getAverageRate()
                     )
             );
