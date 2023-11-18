@@ -5,9 +5,9 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-abstract class RepositoryView {
-    int pageNumber;
-    int pageSize;
-    long totalElements;
-    int totalPages;
+public abstract class RepositoryView {
+    Integer pageNumber;
+    Integer pageSize;
+    Long totalElements;
+    Integer totalPages;
 }

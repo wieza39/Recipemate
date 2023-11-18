@@ -9,7 +9,7 @@ import java.util.List;
 public class PopularRecipeRepositoryView extends RepositoryView {
     List<PopularRecipeDTO> recipes;
 
-    public PopularRecipeRepositoryView(List<PopularRecipeDTO> popularProductDTOList, int pageNumber, int pageSize, long totalElements, int totalPages) {
+    public PopularRecipeRepositoryView(List<PopularRecipeDTO> popularProductDTOList, Integer pageNumber, Integer pageSize, Long totalElements, Integer totalPages) {
         super(pageNumber, pageSize, totalElements, totalPages);
         this.recipes = popularProductDTOList;
     }
