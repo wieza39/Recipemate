@@ -8,7 +8,7 @@ import java.time.Instant;
 
 @Getter
 @AllArgsConstructor
-public class PopularProductDTO {
+public class PopularRecipeDTO {
     private long id;
 
     private String name;
@@ -26,4 +26,6 @@ public class PopularProductDTO {
     private Instant updatedAt;
 
     private Double averageRecipe;
+
+    private RecipeImageDTO image;
 }

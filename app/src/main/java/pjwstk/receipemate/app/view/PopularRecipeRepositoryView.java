@@ -1,15 +1,15 @@
 package pjwstk.receipemate.app.view;
 
 import lombok.Getter;
-import pjwstk.receipemate.app.dto.PopularProductDTO;
+import pjwstk.receipemate.app.dto.PopularRecipeDTO;
 
 import java.util.List;
 
 @Getter
 public class PopularRecipeRepositoryView extends RepositoryView {
-    List<PopularProductDTO> recipes;
+    List<PopularRecipeDTO> recipes;
 
-    public PopularRecipeRepositoryView(List<PopularProductDTO> popularProductDTOList, int pageNumber, int pageSize, long totalElements, int totalPages) {
+    public PopularRecipeRepositoryView(List<PopularRecipeDTO> popularProductDTOList, int pageNumber, int pageSize, long totalElements, int totalPages) {
         super(pageNumber, pageSize, totalElements, totalPages);
         this.recipes = popularProductDTOList;
     }

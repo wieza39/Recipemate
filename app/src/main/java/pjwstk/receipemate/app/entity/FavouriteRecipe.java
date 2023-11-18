@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "favourite_recipes")
+@Table(name = "favourite_recipe")
 public class FavouriteRecipe {
 
     @Id

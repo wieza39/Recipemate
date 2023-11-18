@@ -140,3 +140,15 @@ INSERT INTO recipemate.rate_recipe (value, recipe_id, user_id)
 VALUES (3, 2, 4);
 INSERT INTO recipemate.rate_recipe (value, recipe_id, user_id)
 VALUES (4, 2, 5);
+
+INSERT INTO recipe_image (image_id, recipe_id, is_main, name, alt, title)
+VALUES (1, 1, true, 'Main Image 1', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (2, 2, true, 'Main Image 2', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (3, 3, true, 'Main Image 3', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (4, 4, true, 'Main Image 4', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (5, 5, true, 'Main Image 5', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (6, 6, true, 'Main Image 6', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (7, 7, true, 'Main Image 7', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (8, 8, true, 'Main Image 8', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (9, 9, true, 'Main Image 9', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
+       (10, 10, true, 'Main Image 10', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title');
