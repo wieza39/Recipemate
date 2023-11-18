@@ -25,7 +25,6 @@ public class PopularRecipeViewRepository {
                 averageRateRecipe.getRecipe().getId(),
                 averageRateRecipe.getRecipe().getName(),
                 averageRateRecipe.getRecipe().getDescription(),
-                averageRateRecipe.getRecipe().getStepsDescriptions(),
                 averageRateRecipe.getRecipe().getTimeConsuming(),
                 averageRateRecipe.getRecipe().getDifficulty(),
                 averageRateRecipe.getRecipe().getCategory(),

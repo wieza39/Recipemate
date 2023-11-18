@@ -15,8 +15,6 @@ public class PopularProductDTO {
 
     private String description;
 
-    private String stepsDescriptions;
-
     private String timeConsuming;
 
     private String difficulty;
