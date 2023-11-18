@@ -1,11 +1,11 @@
 package pjwstk.receipemate.app.controller;
 
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pjwstk.receipemate.app.view.PopularRepositoryView;
+import pjwstk.receipemate.app.view.PopularRecipeRepositoryView;
 import pjwstk.receipemate.app.viewRepository.PopularRecipeViewRepository;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/recipe/popular")
@@ -18,7 +18,7 @@ public class PopularRecipeController {
 
     @GetMapping
     @ResponseBody
-    public ResponseEntity<List<PopularRepositoryView>> getPopularRecipes(@RequestParam(defaultValue = "12") int limit) {
-        return ResponseEntity.ok(popularRecipeViewRepository.getList(limit));
+    public ResponseEntity<PopularRecipeRepositoryView> getPopularRecipes(@PageableDefault(value = 2, page = 0) Pageable pageable) {
+        return ResponseEntity.ok(popularRecipeViewRepository.getList(pageable));
     }
 }

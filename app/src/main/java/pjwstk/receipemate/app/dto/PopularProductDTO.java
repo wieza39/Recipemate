@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.view;
+package pjwstk.receipemate.app.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import java.time.Instant;
 
 @Getter
 @AllArgsConstructor
-public class PopularRepositoryView {
+public class PopularProductDTO {
     private long id;
 
     private String name;
