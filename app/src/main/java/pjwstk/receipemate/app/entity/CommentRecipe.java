@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.model;
+package pjwstk.receipemate.app.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -7,22 +7,25 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "ingredient")
-public class Ingredient {
+@Table(name = "comment_recipe")
+public class CommentRecipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "Name is mandatory")
-    private String name;
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 
-    @OneToMany(mappedBy = "ingredient")
-    Set<RecipeIngredient> recipeIngredients;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @NotBlank(message = "Message is mandatory")
+    private String message;
 }

@@ -1,5 +1,7 @@
-package pjwstk.receipemate.app.model;
+package pjwstk.receipemate.app.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -11,8 +13,6 @@ import org.hibernate.annotations.SourceType;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.Instant;
-import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 @AllArgsConstructor
@@ -38,10 +38,11 @@ public class Recipe {
     private String timeConsuming;
 
     @NotBlank(message = "Difficult is mandatory")
-    private String difficult;
+    private String difficulty;
 
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
+    @JsonManagedReference
     private Category category;
 
     @CreationTimestamp(source = SourceType.DB)
@@ -49,17 +50,4 @@ public class Recipe {
 
     @UpdateTimestamp(source = SourceType.DB)
     private Instant updated_at;
-
-    @ManyToMany(mappedBy = "favouriteRecipes")
-    Set<User> favourites;
-
-    @OneToMany(mappedBy = "recipe")
-    Set<RecipeIngredient> recipeIngredients;
-
-    @ManyToMany
-    @JoinTable(
-            name = "comment_recipe",
-            joinColumns = @JoinColumn(name = "recipe_id"),
-            inverseJoinColumns = @JoinColumn(name = "user_id"))
-    Set<User> commentators;
 }

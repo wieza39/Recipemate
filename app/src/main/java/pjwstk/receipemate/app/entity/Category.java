@@ -1,5 +1,6 @@
-package pjwstk.receipemate.app.model;
+package pjwstk.receipemate.app.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -25,5 +26,6 @@ public class Category {
 
     @OneToMany
     @JoinColumn(name = "category_id", referencedColumnName = "id")
-    private List<Recipe> courses;
+    @JsonBackReference
+    private List<Recipe> recipes;
 }
