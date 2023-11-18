@@ -24,7 +24,7 @@ public class PopularRecipeViewRepository {
     public PopularRecipeRepositoryView getList(Pageable pageable) {
         Page<AverageRateRecipe> averageRateRecipesPages = this.averageRateRecipeRepository.getAll(pageable);
 
-        // TODO: Create ProductImageHrefFactory object for create image href
+        // TODO: Create ImageHrefFactory service for create image href
 
         List<PopularRecipeDTO> popularProductDTOList = averageRateRecipesPages.getContent().stream().map(averageRateRecipe -> new PopularRecipeDTO(
                 averageRateRecipe.getRecipe().getId(),
