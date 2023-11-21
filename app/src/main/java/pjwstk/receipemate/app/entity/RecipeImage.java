@@ -11,7 +11,7 @@ import lombok.*;
 @Getter
 @Setter
 @Table(name = "recipe_image")
-public class RecipeImage {
+public class RecipeImage implements Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

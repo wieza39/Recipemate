@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.dto;
+package pjwstk.receipemate.app.view;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +8,7 @@ import java.time.Instant;
 
 @Getter
 @AllArgsConstructor
-public class PopularRecipeDTO {
+public class AverageRateRecipeView {
     private long id;
 
     private String name;
@@ -27,5 +27,5 @@ public class PopularRecipeDTO {
 
     private Double averageRecipe;
 
-    private RecipeImageDTO image;
+    private ImageView image;
 }

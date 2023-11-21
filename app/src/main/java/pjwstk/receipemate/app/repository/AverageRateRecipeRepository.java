@@ -16,5 +16,5 @@ public interface AverageRateRecipeRepository extends JpaRepository<Recipe, Long>
             "LEFT JOIN RateRecipe rr ON rr.recipe = r " +
             "LEFT JOIN RecipeImage i ON i.recipe = r AND i.isMain = true " +
             "GROUP BY r.id ORDER BY AVG(rr.value) DESC, r.id")
-    Page<AverageRateRecipe> getAll(Pageable pageable);
+    Page<AverageRateRecipe> getPopular(Pageable pageable);
 }
