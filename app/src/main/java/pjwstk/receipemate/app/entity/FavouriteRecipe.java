@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.model;
+package pjwstk.receipemate.app.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "favourite_recipes")
+@Table(name = "favourite_recipe")
 public class FavouriteRecipe {
 
     @Id

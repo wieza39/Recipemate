@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.model;
+package pjwstk.receipemate.app.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

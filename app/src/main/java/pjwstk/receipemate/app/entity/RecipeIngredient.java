@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.model;
+package pjwstk.receipemate.app.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -12,8 +12,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "comment_recipe")
-public class CommentRecipe {
+@Table(name = "recipe_ingredient")
+public class RecipeIngredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -23,9 +23,12 @@ public class CommentRecipe {
     private Recipe recipe;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "ingredient_id")
+    private Ingredient ingredient;
 
-    @NotBlank(message = "Message is mandatory")
-    private String message;
+    @NotBlank(message = "Count is mandatory")
+    private Integer count;
+
+    @NotBlank(message = "Measure is mandatory")
+    private String measure;
 }
