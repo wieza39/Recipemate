@@ -23,7 +23,7 @@ public class AverageRateRecipeViewFactory {
                 averageRateRecipe.getRecipe().getName(),
                 averageRateRecipe.getRecipe().getDescription(),
                 averageRateRecipe.getRecipe().getTimeConsuming(),
-                averageRateRecipe.getRecipe().getDifficulty(),
+                averageRateRecipe.getRecipe().getDifficulty().toString(),
                 averageRateRecipe.getRecipe().getCategory(),
                 averageRateRecipe.getRecipe().getCreatedAt(),
                 averageRateRecipe.getRecipe().getUpdatedAt(),

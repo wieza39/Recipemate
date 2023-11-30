@@ -1,5 +1,7 @@
 package pjwstk.receipemate.app.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -20,15 +22,19 @@ public class RecipeIngredient {
 
     @ManyToOne
     @JoinColumn(name = "recipe_id")
+    @JsonBackReference
     private Recipe recipe;
 
     @ManyToOne
     @JoinColumn(name = "ingredient_id")
+    @JsonManagedReference
     private Ingredient ingredient;
 
     @NotBlank(message = "Count is mandatory")
     private Integer count;
 
-    @NotBlank(message = "Measure is mandatory")
-    private String measure;
+    @ManyToOne
+    @JoinColumn(name = "measure_id")
+    @JsonManagedReference
+    private Measure measure;
 }

@@ -7,8 +7,8 @@ import pjwstk.receipemate.app.entity.Category;
 import java.time.Instant;
 import java.util.List;
 
-@AllArgsConstructor
 @Getter
+@AllArgsConstructor
 public class RecipeView {
     private long id;
 
@@ -27,4 +27,6 @@ public class RecipeView {
     private Instant updatedAt;
 
     private List<ImageView> images;
+
+    private List<IngredientView> ingredients;
 }

@@ -10,6 +10,7 @@ import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.SourceType;
 import org.hibernate.annotations.UpdateTimestamp;
+import pjwstk.receipemate.app.enums.RecipeDifficulty;
 
 import java.time.Instant;
 import java.util.List;
@@ -38,7 +39,7 @@ public class Recipe {
     private String timeConsuming;
 
     @NotBlank(message = "Difficult is mandatory")
-    private String difficulty;
+    private RecipeDifficulty difficulty;
 
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
@@ -55,4 +56,8 @@ public class Recipe {
 
     @UpdateTimestamp(source = SourceType.DB)
     private Instant updatedAt;
+
+    @OneToMany(mappedBy = "recipe")
+    @JsonManagedReference
+    List<RecipeIngredient> ingredients;
 }

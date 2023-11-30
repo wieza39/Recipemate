@@ -8,15 +8,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "ingredient")
-public class Ingredient {
+@Table(name = "measure")
+public class Measure {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -24,7 +24,8 @@ public class Ingredient {
     @NotBlank(message = "Name is mandatory")
     private String name;
 
-    @OneToMany(mappedBy = "ingredient")
+    @OneToMany
+    @JoinColumn(name = "measure_id", referencedColumnName = "id")
     @JsonBackReference
-    Set<RecipeIngredient> recipeIngredients;
+    List<RecipeIngredient> recipeIngredient;
 }
