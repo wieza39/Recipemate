@@ -1,12 +1,16 @@
 package pjwstk.receipemate.app.enums;
 
-public enum RecipeDifficulty {
-    EASY,
-    MEDIUM,
-    HARD;
+import lombok.Getter;
 
-    @Override
-    public String toString() {
-        return this.name().toLowerCase();
+@Getter
+public enum RecipeDifficulty {
+    EASY("Łatwy"),
+    MEDIUM("Średni"),
+    HARD("Trudny");
+
+    private String type;
+
+    RecipeDifficulty(String type) {
+        this.type = type;
     }
 }

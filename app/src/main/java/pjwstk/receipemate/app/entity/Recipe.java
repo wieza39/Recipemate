@@ -51,7 +51,7 @@ public class Recipe {
     private Category category;
 
     @OneToMany
-    @JoinColumn(name = "id", referencedColumnName = "id")
+    @JoinColumn(name = "id")
     @JsonManagedReference
     private List<RecipeImage> images;
 

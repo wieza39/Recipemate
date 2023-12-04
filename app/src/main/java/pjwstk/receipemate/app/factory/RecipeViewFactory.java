@@ -26,7 +26,7 @@ public class RecipeViewFactory {
                 recipe.getName(),
                 recipe.getDescription(),
                 recipe.getTimeConsuming(),
-                recipe.getDifficulty().toString(),
+                recipe.getDifficulty().getType(),
                 recipe.getPortionCount(),
                 recipe.getCategory(),
                 recipe.getCreatedAt(),
