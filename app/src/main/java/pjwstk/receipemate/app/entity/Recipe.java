@@ -1,5 +1,6 @@
 package pjwstk.receipemate.app.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -32,8 +33,11 @@ public class Recipe {
     @NotBlank(message = "Description is mandatory")
     private String description;
 
-    @NotBlank(message = "Steps description is mandatory")
-    private String stepsDescriptions;
+    @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RecipeStep> steps;
+
+    @NotBlank(message = "Portion count is mandatory")
+    private Integer portionCount;
 
     @NotBlank(message = "Time consuming is mandatory")
     private String timeConsuming;
@@ -57,7 +61,8 @@ public class Recipe {
     @UpdateTimestamp(source = SourceType.DB)
     private Instant updatedAt;
 
-    @OneToMany(mappedBy = "recipe")
-    @JsonManagedReference
+    @OneToMany
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
+    @JsonBackReference
     List<RecipeIngredient> ingredients;
 }

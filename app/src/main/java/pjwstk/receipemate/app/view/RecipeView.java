@@ -20,6 +20,8 @@ public class RecipeView {
 
     private String difficulty;
 
+    private Integer portionCount;
+
     private Category category;
 
     private Instant createdAt;
@@ -29,4 +31,6 @@ public class RecipeView {
     private List<ImageView> images;
 
     private List<IngredientView> ingredients;
+
+    private List<RecipeStepView> steps;
 }

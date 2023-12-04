@@ -8,10 +8,16 @@ import pjwstk.receipemate.app.view.RecipeView;
 public class RecipeViewFactory {
     private final ImageViewFactory imageViewFactory;
     private final IngredientViewFactory ingredientViewFactory;
+    private final RecipeStepViewFactory recipeStepViewFactory;
 
-    public RecipeViewFactory(ImageViewFactory imageViewFactory, IngredientViewFactory ingredientViewFactory) {
+    public RecipeViewFactory(
+            ImageViewFactory imageViewFactory,
+            IngredientViewFactory ingredientViewFactory,
+            RecipeStepViewFactory recipeStepViewFactory
+    ) {
         this.imageViewFactory = imageViewFactory;
         this.ingredientViewFactory = ingredientViewFactory;
+        this.recipeStepViewFactory = recipeStepViewFactory;
     }
 
     public RecipeView make(Recipe recipe) {
@@ -21,11 +27,13 @@ public class RecipeViewFactory {
                 recipe.getDescription(),
                 recipe.getTimeConsuming(),
                 recipe.getDifficulty().toString(),
+                recipe.getPortionCount(),
                 recipe.getCategory(),
                 recipe.getCreatedAt(),
                 recipe.getUpdatedAt(),
                 this.imageViewFactory.makeList(recipe.getImages()),
-                this.ingredientViewFactory.makeList(recipe.getIngredients())
+                this.ingredientViewFactory.makeList(recipe.getIngredients()),
+                this.recipeStepViewFactory.makeList(recipe.getSteps())
         );
     }
 }
