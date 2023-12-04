@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.view.PageView;
 import pjwstk.receipemate.app.viewrepository.PopularRecipeViewRepository;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/recipe/popular")
 public class PopularRecipeController {
