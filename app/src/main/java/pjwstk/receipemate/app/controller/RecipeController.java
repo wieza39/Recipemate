@@ -1,16 +1,21 @@
 package pjwstk.receipemate.app.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import pjwstk.receipemate.app.service.RecipeService;
+import org.springframework.web.bind.annotation.*;
+import pjwstk.receipemate.app.view.RecipeView;
+import pjwstk.receipemate.app.viewrepository.RecipeViewRepository;
 
 @RestController
 @RequestMapping("/recipe")
 public class RecipeController {
+    private final RecipeViewRepository recipeViewRepository;
 
-    private final RecipeService recipeService;
+    public RecipeController(RecipeViewRepository recipeViewRepository) {
+        this.recipeViewRepository = recipeViewRepository;
+    }
 
-    public RecipeController(RecipeService recipeService) {
-        this.recipeService = recipeService;
+    @GetMapping("/{id}")
+    @ResponseBody
+    public RecipeView find(@PathVariable(value = "id") long id) {
+        return this.recipeViewRepository.get(id);
     }
 }

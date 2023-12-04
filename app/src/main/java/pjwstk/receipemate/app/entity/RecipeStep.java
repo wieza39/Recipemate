@@ -8,23 +8,28 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "ingredient")
-public class Ingredient {
+@Table(name = "recipe_step")
+public class RecipeStep {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotBlank(message = "Name is mandatory")
-    private String name;
+    @NotBlank(message = "Order is mandatory")
+    private Integer stepOrder;
 
-    @OneToMany(mappedBy = "ingredient")
+    @NotBlank(message = "Title is mandatory")
+    private String title;
+
+    @NotBlank(message = "Description is mandatory")
+    private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
     @JsonBackReference
-    Set<RecipeIngredient> recipeIngredients;
+    private Recipe recipe;
 }

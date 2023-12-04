@@ -4,6 +4,9 @@ import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Image;
 import pjwstk.receipemate.app.view.ImageView;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ImageViewFactory {
     public ImageView make(Image image) {
@@ -17,5 +20,11 @@ public class ImageViewFactory {
                 image.getTitle(),
                 null
         );
+    }
+
+    public List<ImageView> makeList(List<? extends Image> images) {
+        return images.stream()
+                .map(this::make)
+                .collect(Collectors.toList());
     }
 }
