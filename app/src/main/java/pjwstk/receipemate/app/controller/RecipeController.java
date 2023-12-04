@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.view.RecipeView;
 import pjwstk.receipemate.app.viewrepository.RecipeViewRepository;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/recipe")
 public class RecipeController {
