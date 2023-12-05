@@ -1,7 +1,7 @@
-package pjwstk.receipemate.app.controller;
+package pjwstk.receipemate.app.controller.recipe;
 
 import org.springframework.web.bind.annotation.*;
-import pjwstk.receipemate.app.view.RecipeView;
+import pjwstk.receipemate.app.view.recipe.RecipeView;
 import pjwstk.receipemate.app.viewrepository.RecipeViewRepository;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")

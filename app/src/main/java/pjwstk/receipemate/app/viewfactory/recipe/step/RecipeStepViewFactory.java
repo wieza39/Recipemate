@@ -1,10 +1,8 @@
-package pjwstk.receipemate.app.factory;
+package pjwstk.receipemate.app.viewfactory.recipe.step;
 
 import org.springframework.stereotype.Service;
-import pjwstk.receipemate.app.entity.RecipeIngredient;
 import pjwstk.receipemate.app.entity.RecipeStep;
-import pjwstk.receipemate.app.view.IngredientView;
-import pjwstk.receipemate.app.view.RecipeStepView;
+import pjwstk.receipemate.app.view.recipe.step.RecipeStepView;
 
 import java.util.List;
 import java.util.stream.Collectors;

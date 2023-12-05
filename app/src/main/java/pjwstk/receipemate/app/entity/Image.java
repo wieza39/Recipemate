@@ -4,4 +4,6 @@ public interface Image {
     String getAlt();
 
     String getTitle();
+
+    boolean getIsMain();
 }

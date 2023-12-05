@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.view;
+package pjwstk.receipemate.app.view.recipe.step;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

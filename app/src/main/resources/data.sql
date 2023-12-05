@@ -95,18 +95,17 @@ VALUES (3, 2, 4);
 INSERT INTO recipemate.rate_recipe (value, recipe_id, user_id)
 VALUES (4, 2, 5);
 
-INSERT INTO recipe_image (id, is_main, name, alt, title)
-VALUES (1, true, 'Main Image 1', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (2, true, 'Main Image 2', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (3, true, 'Main Image 3', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (4, true, 'Main Image 4', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (5, true, 'Main Image 5', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (6, true, 'Main Image 6', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (7, true, 'Main Image 7', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (8, true, 'Main Image 8', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (9, true, 'Main Image 9', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title'),
-       (10, true, 'Main Image 10', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title');
-
+INSERT INTO recipemate.recipe_image (id, is_main, name, alt, title, recipe_id)
+VALUES (1, true, 'Main Image 1', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 1),
+       (2, false, 'Main Image 2', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 1),
+       (3, false, 'Main Image 3', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 1),
+       (4, true, 'Main Image 4', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 2),
+       (5, false, 'Main Image 5', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 2),
+       (6, false, 'Main Image 6', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 3),
+       (7, true, 'Main Image 7', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 3),
+       (8, true, 'Main Image 8', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 4),
+       (9, true, 'Main Image 9', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 5),
+       (10, true, 'Main Image 10', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 6);
 
 INSERT INTO ingredient (id, name)
 VALUES (1, 'Tomato'),

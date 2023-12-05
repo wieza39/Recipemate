@@ -1,31 +1,32 @@
 package pjwstk.receipemate.app.viewrepository;
 
 import org.springframework.stereotype.Service;
-import pjwstk.receipemate.app.entity.Recipe;
 import pjwstk.receipemate.app.exception.NotFoundException;
-import pjwstk.receipemate.app.factory.RecipeViewFactory;
-import pjwstk.receipemate.app.repository.RecipeRepository;
-import pjwstk.receipemate.app.view.RecipeView;
-
-import java.util.Optional;
+import pjwstk.receipemate.app.viewfactory.recipe.RecipeDetailedViewFactory;
+import pjwstk.receipemate.app.model.AverageRateRecipe;
+import pjwstk.receipemate.app.repository.recipe.AverageRateRecipeRepository;
+import pjwstk.receipemate.app.view.recipe.RecipeView;
 
 @Service
 public class RecipeViewRepository {
-    private final RecipeRepository recipeRepository;
-    private final RecipeViewFactory recipeViewFactory;
+    private final AverageRateRecipeRepository averageRateRecipeRepository;
+    private final RecipeDetailedViewFactory recipeDetailedViewFactory;
 
-    public RecipeViewRepository(RecipeRepository recipeRepository, RecipeViewFactory recipeViewFactory) {
-        this.recipeRepository = recipeRepository;
-        this.recipeViewFactory = recipeViewFactory;
+    public RecipeViewRepository(
+            AverageRateRecipeRepository averageRateRecipeRepository,
+            RecipeDetailedViewFactory recipeDetailedViewFactory
+    ) {
+        this.averageRateRecipeRepository = averageRateRecipeRepository;
+        this.recipeDetailedViewFactory = recipeDetailedViewFactory;
     }
 
     public RecipeView get(long id) {
-        Optional<Recipe> recipe = this.recipeRepository.findById(id);
+        AverageRateRecipe recipe = this.averageRateRecipeRepository.findById(id);
 
-        if (recipe.isEmpty()) {
+        if (recipe == null) {
             throw new NotFoundException("Recipe not found!");
         }
 
-        return this.recipeViewFactory.make(recipe.get());
+        return this.recipeDetailedViewFactory.make(recipe);
     }
 }

@@ -8,13 +8,11 @@ import pjwstk.receipemate.app.entity.RecipeImage;
 @Getter
 @Setter
 public class AverageRateRecipe {
-    private RecipeImage image;
     private Recipe recipe;
     private Double averageRate;
 
-    public AverageRateRecipe(Recipe recipe, Double averageRate, RecipeImage image) {
+    public AverageRateRecipe(Recipe recipe, Double averageRate) {
         this.recipe = recipe;
-        this.image = image;
         this.averageRate = averageRate;
     }
 }
