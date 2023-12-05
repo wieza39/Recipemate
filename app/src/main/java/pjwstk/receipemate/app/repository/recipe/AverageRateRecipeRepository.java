@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.entity.Recipe;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 
@@ -23,4 +24,11 @@ public interface AverageRateRecipeRepository extends JpaRepository<Recipe, Long>
             "WHERE r.id = :id " +
             "GROUP BY r.id ORDER BY AVG(rr.value) DESC, r.id")
     AverageRateRecipe findById(long id);
+
+    @Query(value = "SELECT new pjwstk.receipemate.app.model.AverageRateRecipe(r, AVG(rr.value)) " +
+            "FROM Recipe r " +
+            "LEFT JOIN RateRecipe rr ON rr.recipe = r " +
+            "WHERE r.category = :category " +
+            "GROUP BY r.id ORDER BY AVG(rr.value) DESC, r.id")
+    Page<AverageRateRecipe> getByCategoryId(Pageable pageable, Category category);
 }
