@@ -1,7 +1,7 @@
 package pjwstk.receipemate.app.service;
 
 import org.springframework.stereotype.Service;
-import pjwstk.receipemate.app.repository.RecipeRepository;
+import pjwstk.receipemate.app.repository.recipe.RecipeRepository;
 
 @Service
 public class RecipeService {

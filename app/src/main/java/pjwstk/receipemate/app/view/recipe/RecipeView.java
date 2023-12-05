@@ -1,14 +1,17 @@
-package pjwstk.receipemate.app.view;
+package pjwstk.receipemate.app.view.recipe;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 import pjwstk.receipemate.app.entity.Category;
+import pjwstk.receipemate.app.view.ImageView;
+import pjwstk.receipemate.app.view.recipe.ingredient.RecipeIngredientView;
+import pjwstk.receipemate.app.view.recipe.step.RecipeStepView;
 
 import java.time.Instant;
 import java.util.List;
 
 @Getter
-@AllArgsConstructor
+@Setter
 public class RecipeView {
     private long id;
 
@@ -20,9 +23,11 @@ public class RecipeView {
 
     private String difficulty;
 
-    private Integer portionCount;
-
     private Category category;
+
+    private Double rating;
+
+    private Integer portionCount;
 
     private Instant createdAt;
 
@@ -30,7 +35,7 @@ public class RecipeView {
 
     private List<ImageView> images;
 
-    private List<IngredientView> ingredients;
+    private List<RecipeIngredientView> ingredients;
 
     private List<RecipeStepView> steps;
 }

@@ -16,8 +16,8 @@ public class RecipeImage implements Image {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
-    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
+    @ManyToOne
+    @JoinColumn(name = "recipe_id")
     @JsonBackReference
     private Recipe recipe;
 
@@ -31,4 +31,9 @@ public class RecipeImage implements Image {
 
     @NotBlank(message = "Title is mandatory")
     private String title;
+
+    @Override
+    public boolean getIsMain() {
+        return this.isMain;
+    }
 }

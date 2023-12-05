@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.controller;
+package pjwstk.receipemate.app.controller.recipe;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;

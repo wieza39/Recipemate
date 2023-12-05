@@ -1,14 +1,16 @@
-package pjwstk.receipemate.app.view;
+package pjwstk.receipemate.app.view.recipe;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import pjwstk.receipemate.app.entity.Category;
+import pjwstk.receipemate.app.view.ImageView;
 
 import java.time.Instant;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor
-public class AverageRateRecipeView {
+public class PopularRecipeView {
     private long id;
 
     private String name;
@@ -25,7 +27,7 @@ public class AverageRateRecipeView {
 
     private Instant updatedAt;
 
-    private Double averageRecipe;
+    private Double averageRating;
 
-    private ImageView image;
+    private List<ImageView> images;
 }

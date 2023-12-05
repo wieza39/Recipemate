@@ -51,8 +51,9 @@ public class Recipe {
     private Category category;
 
     @OneToMany
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "recipe_id", referencedColumnName = "id")
     @JsonManagedReference
+    @org.hibernate.annotations.OrderBy(clause = "is_main DESC")
     private List<RecipeImage> images;
 
     @CreationTimestamp(source = SourceType.DB)
@@ -65,4 +66,6 @@ public class Recipe {
     @JoinColumn(name = "recipe_id", referencedColumnName = "id")
     @JsonBackReference
     List<RecipeIngredient> ingredients;
+
+
 }
