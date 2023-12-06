@@ -44,11 +44,11 @@ public class CategoryRecipesPageViewRepository {
         }
 
         Page<AverageRateRecipe> averageRateRecipesPage = this.averageRateRecipeRepository.getByCategoryId(pageable, category.get());
-        List<RecipeView> recipeViewList = this.recipeViewFactory.makeList(averageRateRecipesPage);
+        List<RecipeView> recipeDetailedViewList = this.recipeViewFactory.makeList(averageRateRecipesPage);
 
         return this.categoryRecipesPageViewFactory.makeList(
                 averageRateRecipesPage,
-                recipeViewList,
+                recipeDetailedViewList,
                 this.categoryViewFactory.make(category.get())
         );
 

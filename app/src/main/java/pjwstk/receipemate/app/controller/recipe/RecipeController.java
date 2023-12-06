@@ -1,7 +1,10 @@
 package pjwstk.receipemate.app.controller.recipe;
 
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
-import pjwstk.receipemate.app.view.recipe.RecipeView;
+import pjwstk.receipemate.app.request.RecipeFindRequest;
+import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
 import pjwstk.receipemate.app.viewrepository.RecipeViewRepository;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -16,7 +19,20 @@ public class RecipeController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public RecipeView find(@PathVariable(value = "id") long id) {
-        return this.recipeViewRepository.get(id);
+    public RecipeDetailedView find(
+            @PathVariable(value = "id") long id,
+            @RequestBody RecipeFindRequest recipeFindRequest
+    ) {
+        int relatedRecipesLimit = 4;
+
+        if (recipeFindRequest != null && recipeFindRequest.getRelatedRecipesLimit() != null) {
+            relatedRecipesLimit = recipeFindRequest.getRelatedRecipesLimit();
+        }
+
+        Pageable pageable = PageRequest.of(
+                0,
+                relatedRecipesLimit
+        );
+        return this.recipeViewRepository.get(id, pageable);
     }
 }

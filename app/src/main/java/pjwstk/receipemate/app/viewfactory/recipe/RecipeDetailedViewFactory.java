@@ -3,34 +3,50 @@ package pjwstk.receipemate.app.viewfactory.recipe;
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Recipe;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
+import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
+import pjwstk.receipemate.app.viewfactory.ImageViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.ingredient.RecipeIngredientViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.step.RecipeStepViewFactory;
 
+import java.util.List;
+
 @Service
 public class RecipeDetailedViewFactory {
-    private final RecipeViewFactory recipeViewFactory;
     private final RecipeIngredientViewFactory recipeIngredientViewFactory;
     private final RecipeStepViewFactory recipeStepViewFactory;
+    private final ImageViewFactory imageViewFactory;
 
     public RecipeDetailedViewFactory(
-            RecipeViewFactory recipeViewFactory,
             RecipeIngredientViewFactory recipeIngredientViewFactory,
-            RecipeStepViewFactory recipeStepViewFactory
+            RecipeStepViewFactory recipeStepViewFactory,
+            ImageViewFactory imageViewFactory
     ) {
-        this.recipeViewFactory = recipeViewFactory;
         this.recipeIngredientViewFactory = recipeIngredientViewFactory;
         this.recipeStepViewFactory = recipeStepViewFactory;
+        this.imageViewFactory = imageViewFactory;
     }
 
-    public RecipeView make(AverageRateRecipe averageRateRecipe) {
+    public RecipeDetailedView make(AverageRateRecipe averageRateRecipe, List<RecipeView> relatedRecipes) {
         Recipe recipe = averageRateRecipe.getRecipe();
 
-        RecipeView recipeView = this.recipeViewFactory.make(averageRateRecipe);
+        RecipeDetailedView recipeDetailedView = new RecipeDetailedView();
 
-        recipeView.setIngredients(this.recipeIngredientViewFactory.makeList(recipe.getIngredients()));
-        recipeView.setSteps(this.recipeStepViewFactory.makeList(recipe.getSteps()));
+        recipeDetailedView.setId(recipe.getId());
+        recipeDetailedView.setName(recipe.getName());
+        recipeDetailedView.setDescription(recipe.getDescription());
+        recipeDetailedView.setTimeConsuming(recipe.getTimeConsuming());
+        recipeDetailedView.setDifficulty(recipe.getDifficulty().getType());
+        recipeDetailedView.setCategory(recipe.getCategory());
+        recipeDetailedView.setRating(averageRateRecipe.getAverageRate());
+        recipeDetailedView.setPortionCount(recipe.getPortionCount());
+        recipeDetailedView.setCreatedAt(recipe.getCreatedAt());
+        recipeDetailedView.setUpdatedAt(recipe.getUpdatedAt());
+        recipeDetailedView.setImages(this.imageViewFactory.makeList(recipe.getImages()));
+        recipeDetailedView.setIngredients(this.recipeIngredientViewFactory.makeList(recipe.getIngredients()));
+        recipeDetailedView.setSteps(this.recipeStepViewFactory.makeList(recipe.getSteps()));
+        recipeDetailedView.setRelatedRecipes(relatedRecipes);
 
-        return recipeView;
+        return recipeDetailedView;
     }
 }

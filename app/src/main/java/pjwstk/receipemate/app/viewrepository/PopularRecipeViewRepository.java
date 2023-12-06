@@ -2,6 +2,7 @@ package pjwstk.receipemate.app.viewrepository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import pjwstk.receipemate.app.view.recipe.RecipeView;
 import pjwstk.receipemate.app.viewfactory.PageViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.RecipeViewFactory;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
@@ -9,7 +10,6 @@ import pjwstk.receipemate.app.repository.recipe.AverageRateRecipeRepository;
 import pjwstk.receipemate.app.view.PageView;
 
 import org.springframework.data.domain.Pageable;
-import pjwstk.receipemate.app.view.recipe.RecipeView;
 
 import java.util.List;
 
@@ -31,11 +31,11 @@ public class PopularRecipeViewRepository {
 
     public PageView getList(Pageable pageable) {
         Page<AverageRateRecipe> averageRateRecipesPage = this.averageRateRecipeRepository.getPopular(pageable);
-        List<RecipeView> popularRecipeViews = this.recipeViewFactory.makeList(averageRateRecipesPage);
+        List<RecipeView> popularRecipeDetailedViews = this.recipeViewFactory.makeList(averageRateRecipesPage);
 
         return this.pageViewFactory.make(
                 averageRateRecipesPage,
-                popularRecipeViews
+                popularRecipeDetailedViews
         );
     }
 }
