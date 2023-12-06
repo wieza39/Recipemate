@@ -21,47 +21,106 @@ VALUES (10, 'Exotic Desserts');
 
 INSERT INTO recipemate.recipe (category_id, created_at, id, updated_at, description, difficulty, name, time_consuming,
                                portion_count)
-VALUES (1, '2023-01-01 12:00:00.000000', 1, '2023-01-01 14:30:00.000000', 'Delicious Pasta Dish', 1,
+VALUES (1, '2023-01-01 12:00:00.000000', 1, '2023-01-01 14:30:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        1,
         'Spaghetti Bolognese', '45', 3),
-       (2, '2023-01-02 10:30:00.000000', 2, '2023-01-02 12:45:00.000000', 'Sushi Masterpiece', 2, 'Dragon Roll Sushi',
+       (2, '2023-01-02 10:30:00.000000', 2, '2023-01-02 12:45:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        2, 'Dragon Roll Sushi',
         '60', 2),
-       (3, '2023-01-03 15:20:00.000000', 3, '2023-01-03 17:10:00.000000', 'Classic Croissant', 0, 'Buttery Croissants',
+       (3, '2023-01-03 15:20:00.000000', 3, '2023-01-03 17:10:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0, 'Buttery Croissants',
         '120', 5),
-       (1, '2023-01-04 09:45:00.000000', 4, '2023-01-04 11:30:00.000000', 'Pizza Margherita', 1,
+       (1, '2023-01-04 09:45:00.000000', 4, '2023-01-04 11:30:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        1,
         'Authentic Margherita Pizza', '30', 4),
-       (2, '2023-01-05 14:15:00.000000', 5, '2023-01-05 16:00:00.000000', 'Teriyaki Chicken Bowl', 0,
+       (2, '2023-01-05 14:15:00.000000', 5, '2023-01-05 16:00:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0,
         'Teriyaki Chicken and Rice Bowl', '40', 2),
-       (3, '2023-01-06 11:00:00.000000', 6, '2023-01-06 13:20:00.000000', 'Chocolate Mousse', 2,
+       (3, '2023-01-06 11:00:00.000000', 6, '2023-01-06 13:20:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        2,
         'Decadent Chocolate Mousse', '90', 6),
-       (1, '2023-01-07 16:30:00.000000', 7, '2023-01-07 18:45:00.000000', 'Lasagna Supreme', 1, 'Hearty Beef Lasagna',
+       (1, '2023-01-07 16:30:00.000000', 7, '2023-01-07 18:45:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        1, 'Hearty Beef Lasagna',
         '75', 4),
-       (2, '2023-01-08 12:45:00.000000', 8, '2023-01-08 14:15:00.000000', 'Soy-Ginger Salmon', 0,
+       (2, '2023-01-08 12:45:00.000000', 8, '2023-01-08 14:15:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0,
         'Soy-Ginger Glazed Salmon', '35', 2),
-       (3, '2023-01-09 10:00:00.000000', 9, '2023-01-09 11:45:00.000000', 'Almond Croissant', 1,
+       (3, '2023-01-09 10:00:00.000000', 9, '2023-01-09 11:45:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        1,
         'Flaky Almond Croissant', '60', 3),
-       (1, '2023-01-10 13:20:00.000000', 10, '2023-01-10 15:00:00.000000', 'Vegetarian Pizza', 0,
+       (1, '2023-01-10 13:20:00.000000', 10, '2023-01-10 15:00:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0,
         'Deluxe Vegetarian Pizza', '40', 4),
-       (2, '2023-01-11 08:30:00.000000', 11, '2023-01-11 10:15:00.000000', 'Tempura Masterclass', 2,
+       (2, '2023-01-11 08:30:00.000000', 11, '2023-01-11 10:15:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        2,
         'Assorted Tempura Platter', '75', 5),
-       (3, '2023-01-12 14:45:00.000000', 12, '2023-01-12 16:30:00.000000', 'Lemon Tart', 1, 'Zesty Lemon Tart', '50',
+       (3, '2023-01-12 14:45:00.000000', 12, '2023-01-12 16:30:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        1, 'Zesty Lemon Tart', '50',
         3),
-       (1, '2023-01-13 09:00:00.000000', 13, '2023-01-13 10:45:00.000000', 'Mushroom Risotto', 1,
+       (1, '2023-01-13 09:00:00.000000', 13, '2023-01-13 10:45:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        1,
         'Creamy Mushroom Risotto', '55', 4),
-       (2, '2023-01-14 15:10:00.000000', 14, '2023-01-14 17:00:00.000000', 'Homemade Ramen', 2, 'Rich Tonkotsu Ramen',
+       (2, '2023-01-14 15:10:00.000000', 14, '2023-01-14 17:00:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        2, 'Rich Tonkotsu Ramen',
         '90', 2),
-       (3, '2023-01-15 11:30:00.000000', 15, '2023-01-15 13:15:00.000000', 'Classic Baguette', 0,
+       (3, '2023-01-15 11:30:00.000000', 15, '2023-01-15 13:15:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0,
         'Crusty French Baguette', '45', 6),
-       (1, '2023-01-16 16:00:00.000000', 16, '2023-01-16 17:45:00.000000', 'Caprese Salad', 0, 'Fresh Caprese Salad',
+       (1, '2023-01-16 16:00:00.000000', 16, '2023-01-16 17:45:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0, 'Fresh Caprese Salad',
         '20', 2),
-       (2, '2023-01-17 12:20:00.000000', 17, '2023-01-17 14:00:00.000000', 'Chicken Parmesan', 1,
+       (2, '2023-01-17 12:20:00.000000', 17, '2023-01-17 14:00:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        1,
         'Classic Chicken Parmesan', '60', 4),
-       (3, '2023-01-18 08:45:00.000000', 18, '2023-01-18 10:30:00.000000', 'Berry Smoothie Bowl', 0,
+       (3, '2023-01-18 08:45:00.000000', 18, '2023-01-18 10:30:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0,
         'Antioxidant-Packed Smoothie Bowl', '15', 1),
-       (1, '2023-01-19 14:10:00.000000', 19, '2023-01-19 15:45:00.000000', 'Gourmet Grilled Cheese', 0,
+       (1, '2023-01-19 14:10:00.000000', 19, '2023-01-19 15:45:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0,
         'Truffle-Infused Grilled Cheese', '25', 2),
-       (2, '2023-01-20 10:30:00.000000', 20, '2023-01-20 12:15:00.000000', 'Mango Sorbet', 0, 'Refreshing Mango Sorbet',
+       (2, '2023-01-20 10:30:00.000000', 20, '2023-01-20 12:15:00.000000', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac dolor eu elit interdum euismod.</p>
+<p>Vestibulum vel turpis vel libero scelerisque ullamcorper eget sed lorem. Curabitur aliquet lectus vel massa iaculis, eu ultrices arcu convallis.</p>
+<p>Praesent sit amet tortor eu elit convallis cursus. Nunc eu lectus sed justo pellentesque tincidunt. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>',
+        0, 'Refreshing Mango Sorbet',
         '30', 3);
-
 
 INSERT INTO recipemate.user (id, first_name, login, password, second_name)
 VALUES (1, 'JohnDoe', 'johndoe123', 'pass123', 'Doe');

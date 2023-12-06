@@ -30,6 +30,7 @@ public class Recipe {
     @NotBlank(message = "Name is mandatory")
     private String name;
 
+    @Column(columnDefinition = "TEXT")
     @NotBlank(message = "Description is mandatory")
     private String description;
 
