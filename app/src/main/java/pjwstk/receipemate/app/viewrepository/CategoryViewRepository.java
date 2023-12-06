@@ -3,8 +3,8 @@ package pjwstk.receipemate.app.viewrepository;
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.repository.CategoryRepository;
-import pjwstk.receipemate.app.view.CategoryView;
-import pjwstk.receipemate.app.viewfactory.CategoryViewFactory;
+import pjwstk.receipemate.app.view.category.CategoryView;
+import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 
 import java.util.List;
 

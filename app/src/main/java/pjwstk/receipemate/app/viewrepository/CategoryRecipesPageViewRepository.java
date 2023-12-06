@@ -7,12 +7,11 @@ import pjwstk.receipemate.app.exception.NotFoundException;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.repository.CategoryRepository;
 import pjwstk.receipemate.app.repository.recipe.AverageRateRecipeRepository;
-
 import org.springframework.data.domain.Pageable;
-import pjwstk.receipemate.app.view.CategoryRecipesPageView;
+import pjwstk.receipemate.app.view.category.recipe.CategoryRecipesPageView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
-import pjwstk.receipemate.app.viewfactory.CategoryRecipesPageViewFactory;
-import pjwstk.receipemate.app.viewfactory.CategoryViewFactory;
+import pjwstk.receipemate.app.viewfactory.category.recipe.CategoryRecipesPageViewFactory;
+import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.RecipeViewFactory;
 
 import java.util.List;
@@ -36,7 +35,6 @@ public class CategoryRecipesPageViewRepository {
     }
 
     public CategoryRecipesPageView getList(Pageable pageable, long categoryId) {
-
         Optional<Category> category = this.categoryRepository.findById(categoryId);
 
         if (category.isEmpty()) {
@@ -51,7 +49,5 @@ public class CategoryRecipesPageViewRepository {
                 recipeDetailedViewList,
                 this.categoryViewFactory.make(category.get())
         );
-
-
     }
 }
