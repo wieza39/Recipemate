@@ -10,13 +10,15 @@ import java.util.List;
 @Service
 public class CategoryRecipesPageViewFactory {
     public CategoryRecipesPageView makeList(Page<?> page, List<?> items, CategoryView categoryView) {
-        return new CategoryRecipesPageView(
-                page.getPageable().getPageNumber(),
-                page.getPageable().getPageSize(),
-                page.getTotalElements(),
-                page.getTotalPages(),
-                items,
-                categoryView
-        );
+        CategoryRecipesPageView categoryRecipesPageView = new CategoryRecipesPageView();
+
+        categoryRecipesPageView.setCategory(categoryView);
+        categoryRecipesPageView.setPageNumber(page.getPageable().getPageNumber());
+        categoryRecipesPageView.setPageSize(page.getPageable().getPageSize());
+        categoryRecipesPageView.setTotalPages(page.getTotalPages());
+        categoryRecipesPageView.setTotalElements(page.getTotalElements());
+        categoryRecipesPageView.setItems(items);
+
+        return categoryRecipesPageView;
     }
 }

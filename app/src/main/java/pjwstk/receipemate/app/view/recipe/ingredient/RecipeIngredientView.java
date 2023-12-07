@@ -1,13 +1,13 @@
 package pjwstk.receipemate.app.view.recipe.ingredient;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@AllArgsConstructor
+@Setter
 public class RecipeIngredientView {
-    private final long id;
-    private final String name;
-    private final Integer count;
-    private final String  measure;
+    private long id;
+    private String name;
+    private Integer count;
+    private String measure;
 }

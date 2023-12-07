@@ -1,10 +1,10 @@
 package pjwstk.receipemate.app.view.recipe.step;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@AllArgsConstructor
+@Setter
 public class RecipeStepView {
     private long id;
     private Integer order;
