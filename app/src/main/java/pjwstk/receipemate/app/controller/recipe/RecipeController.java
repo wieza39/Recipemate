@@ -5,7 +5,10 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.request.RecipeFindRequest;
 import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
+import pjwstk.receipemate.app.view.recipe.RecipeView;
 import pjwstk.receipemate.app.viewrepository.RecipeViewRepository;
+
+import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
@@ -34,5 +37,11 @@ public class RecipeController {
                 relatedRecipesLimit
         );
         return this.recipeViewRepository.get(id, pageable);
+    }
+
+    @GetMapping("/search")
+    @ResponseBody
+    public List<RecipeView> getByPhrase(@RequestParam String phrase) {
+        return this.recipeViewRepository.getByPhrase(phrase);
     }
 }

@@ -4,11 +4,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.exception.NotFoundException;
+import pjwstk.receipemate.app.view.recipe.RecipeView;
 import pjwstk.receipemate.app.viewfactory.recipe.RecipeDetailedViewFactory;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.repository.recipe.AverageRateRecipeRepository;
 import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
 import pjwstk.receipemate.app.viewfactory.recipe.RecipeViewFactory;
+
+import java.util.List;
 
 @Service
 public class RecipeViewRepository {
@@ -40,4 +43,6 @@ public class RecipeViewRepository {
                 this.recipeViewFactory.makeList(relatedRecipes)
         );
     }
+
+    public List<RecipeView> getByPhrase(String phrase) {}
 }
