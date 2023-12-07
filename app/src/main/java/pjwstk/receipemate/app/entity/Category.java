@@ -28,4 +28,8 @@ public class Category {
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     @JsonBackReference
     private List<Recipe> recipes;
+
+    @OneToOne(mappedBy = "category")
+    @JsonBackReference
+    private CategoryImage categoryImage;
 }
