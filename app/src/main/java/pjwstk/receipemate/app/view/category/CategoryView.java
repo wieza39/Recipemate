@@ -9,4 +9,6 @@ public class CategoryView {
     private long id;
 
     private String name;
+
+    private CategoryImageView categoryImageView;
 }

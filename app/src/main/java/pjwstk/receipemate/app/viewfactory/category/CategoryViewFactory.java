@@ -9,11 +9,20 @@ import java.util.stream.Collectors;
 
 @Service
 public class CategoryViewFactory {
+
+    private final CategoryImageViewFactory categoryImageViewFactory;
+
+    public CategoryViewFactory(CategoryImageViewFactory categoryImageViewFactory) {
+        this.categoryImageViewFactory = categoryImageViewFactory;
+    }
+
     public CategoryView make(Category category) {
         CategoryView categoryView = new CategoryView();
 
         categoryView.setId(category.getId());
         categoryView.setName(category.getName());
+        categoryView.setCategoryImageView(categoryView.getCategoryImageView());
+        categoryView.setCategoryImageView(categoryImageViewFactory.make(category.getCategoryImage()));
 
         return categoryView;
     }

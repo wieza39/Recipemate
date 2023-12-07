@@ -166,6 +166,18 @@ VALUES (1, true, 'Main Image 1', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese
        (9, true, 'Main Image 9', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 5),
        (10, true, 'Main Image 10', 'Spaghetti Bolognese Alt', 'Spaghetti Bolognese Title', 6);
 
+INSERT INTO recipemate.category_image (id, category_id, name, alt, title)
+VALUES (1, 1, 'Category Image 1', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (2, 2, 'Category Image 2', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (3, 3, 'Category Image 3', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (4, 4, 'Category Image 4', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (5, 5, 'Category Image 5', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (6, 6, 'Category Image 6', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (7, 7, 'Category Image 7', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (8, 8, 'Category Image 8', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (9, 9, 'Category Image 9', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title'),
+       (10, 10, 'Category Image 10', 'Spaghetti Bolognese alt', 'Spaghetti Bolognese Title');
+
 INSERT INTO ingredient (id, name)
 VALUES (1, 'Tomato'),
        (2, 'Pasta'),
