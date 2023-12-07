@@ -21,7 +21,7 @@ public class RecipeController {
     @ResponseBody
     public RecipeDetailedView find(
             @PathVariable(value = "id") long id,
-            @RequestBody RecipeFindRequest recipeFindRequest
+            @RequestBody(required = false) RecipeFindRequest recipeFindRequest
     ) {
         int relatedRecipesLimit = 4;
 

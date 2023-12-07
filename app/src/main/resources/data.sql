@@ -122,16 +122,16 @@ VALUES (1, '2023-01-01 12:00:00.000000', 1, '2023-01-01 14:30:00.000000', '<p>Lo
         0, 'Refreshing Mango Sorbet',
         '30', 3);
 
-INSERT INTO recipemate.user (id, first_name, login, password, second_name)
-VALUES (1, 'JohnDoe', 'johndoe123', 'pass123', 'Doe');
-INSERT INTO recipemate.user (id, first_name, login, password, second_name)
-VALUES (2, 'JaneSmith', 'janesmith456', 'securepass', 'Smith');
-INSERT INTO recipemate.user (id, first_name, login, password, second_name)
-VALUES (3, 'MichaelJohnson', 'michaelj567', 'password123', 'Johnson');
-INSERT INTO recipemate.user (id, first_name, login, password, second_name)
-VALUES (4, 'EmilyWilliams', 'emilyw789', 'mysecretpassword', 'Williams');
-INSERT INTO recipemate.user (id, first_name, login, password, second_name)
-VALUES (5, 'DavidBrown', 'davidbrown0101', 'supersecurepass', 'Brown');
+INSERT INTO recipemate.user (id, first_name, email, password, second_name)
+VALUES (1, 'JohnDoe', 'johndoe123@test.com', 'pass123', 'Doe');
+INSERT INTO recipemate.user (id, first_name, email, password, second_name)
+VALUES (2, 'JaneSmith', 'janesmith456@test.com', 'securepass', 'Smith');
+INSERT INTO recipemate.user (id, first_name, email, password, second_name)
+VALUES (3, 'MichaelJohnson', 'michaelj567@test.com', 'password123', 'Johnson');
+INSERT INTO recipemate.user (id, first_name, email, password, second_name)
+VALUES (4, 'EmilyWilliams', 'emilyw789@test.com', 'mysecretpassword', 'Williams');
+INSERT INTO recipemate.user (id, first_name, email, password, second_name)
+VALUES (5, 'DavidBrown', 'davidbrown0101@test.com', 'supersecurepass', 'Brown');
 
 INSERT INTO recipemate.rate_recipe (value, recipe_id, user_id)
 VALUES (4, 1, 1);

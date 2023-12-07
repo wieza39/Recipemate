@@ -1,7 +1,10 @@
 package pjwstk.receipemate.app.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,15 +28,18 @@ public class User {
     @NotBlank(message = "Second name is mandatory")
     private String secondName;
 
-    @NotBlank(message = "Login is mandatory")
-    private String login;
+    @NotEmpty(message = "Email is mandatory")
+    @Email
+    @Size(max = 255)
+    @Column(unique = true)
+    private String email;
 
     @NotBlank(message = "Password is mandatory")
     private String password;
 
     @ManyToMany
     @JoinTable(
-            name = "favourite_recipes",
+            name = "favourite_recipe",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "recipe_id"))
     Set<Recipe> favouriteRecipes;
