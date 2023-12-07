@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import pjwstk.receipemate.app.view.CategoryView;
+import pjwstk.receipemate.app.view.category.CategoryView;
 import pjwstk.receipemate.app.view.PageView;
 import pjwstk.receipemate.app.viewrepository.CategoryRecipesPageViewRepository;
 import pjwstk.receipemate.app.viewrepository.CategoryViewRepository;

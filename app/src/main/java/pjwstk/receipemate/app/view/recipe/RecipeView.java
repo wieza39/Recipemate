@@ -4,8 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.view.ImageView;
-import pjwstk.receipemate.app.view.recipe.ingredient.RecipeIngredientView;
-import pjwstk.receipemate.app.view.recipe.step.RecipeStepView;
 
 import java.time.Instant;
 import java.util.List;
@@ -25,17 +23,13 @@ public class RecipeView {
 
     private Category category;
 
-    private Double rating;
-
-    private Integer portionCount;
-
     private Instant createdAt;
 
     private Instant updatedAt;
 
+    private Double rating;
+
+    private Integer portionCount;
+
     private List<ImageView> images;
-
-    private List<RecipeIngredientView> ingredients;
-
-    private List<RecipeStepView> steps;
 }

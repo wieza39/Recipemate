@@ -1,15 +1,14 @@
-package pjwstk.receipemate.app.viewfactory;
+package pjwstk.receipemate.app.viewfactory.category;
 
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Category;
-import pjwstk.receipemate.app.view.CategoryView;
+import pjwstk.receipemate.app.view.category.CategoryView;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class CategoryViewFactory {
-
     public CategoryView make(Category category) {
         CategoryView categoryView = new CategoryView();
 

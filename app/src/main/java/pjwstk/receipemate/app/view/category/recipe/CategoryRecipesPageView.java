@@ -1,7 +1,9 @@
-package pjwstk.receipemate.app.view;
+package pjwstk.receipemate.app.view.category.recipe;
 
 import lombok.Getter;
 import lombok.Setter;
+import pjwstk.receipemate.app.view.PageView;
+import pjwstk.receipemate.app.view.category.CategoryView;
 
 import java.util.List;
 
