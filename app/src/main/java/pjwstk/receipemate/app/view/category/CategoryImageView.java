@@ -6,12 +6,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@AllArgsConstructor
 public class CategoryImageView {
     private String href;
 
     private String alt;
 
     private String title;
-
 }

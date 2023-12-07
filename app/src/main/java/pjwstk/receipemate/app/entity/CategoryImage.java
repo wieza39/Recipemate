@@ -21,7 +21,6 @@ import lombok.Setter;
 @Setter
 @Table(name = "category_image")
 public class CategoryImage {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -39,5 +38,4 @@ public class CategoryImage {
 
     @NotBlank(message = "Title is mandatory")
     private String title;
-
 }
