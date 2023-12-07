@@ -67,6 +67,4 @@ public class Recipe {
     @JoinColumn(name = "recipe_id", referencedColumnName = "id")
     @JsonBackReference
     List<RecipeIngredient> ingredients;
-
-
 }
