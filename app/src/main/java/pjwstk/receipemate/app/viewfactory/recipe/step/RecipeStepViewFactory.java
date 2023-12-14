@@ -12,12 +12,14 @@ public class RecipeStepViewFactory {
     public RecipeStepView make(RecipeStep recipeStep) {
         if (recipeStep == null) return null;
 
-        return new RecipeStepView(
-                recipeStep.getId(),
-                recipeStep.getStepOrder(),
-                recipeStep.getTitle(),
-                recipeStep.getDescription()
-        );
+        RecipeStepView recipeStepView = new RecipeStepView();
+
+        recipeStepView.setId(recipeStep.getId());
+        recipeStepView.setOrder(recipeStep.getStepOrder());
+        recipeStepView.setTitle(recipeStep.getTitle());
+        recipeStepView.setDescription(recipeStep.getDescription());
+
+        return recipeStepView;
     }
 
     public List<RecipeStepView> makeList(List<RecipeStep> recipeSteps) {

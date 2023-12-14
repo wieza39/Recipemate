@@ -5,7 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.view.PageView;
-import pjwstk.receipemate.app.viewrepository.PopularRecipeViewRepository;
+import pjwstk.receipemate.app.viewrepository.recipe.PopularRecipeViewRepository;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController

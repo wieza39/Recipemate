@@ -49,4 +49,19 @@ public interface AverageRateRecipeRepository extends JpaRepository<Recipe, Long>
             @Param(value = "recipe") Recipe recipe,
             Pageable pageable
     );
+
+    @Query(value = "SELECT new pjwstk.receipemate.app.model.AverageRateRecipe(r, AVG(rr.value)) " +
+            "FROM Recipe r " +
+            "LEFT JOIN RateRecipe rr ON rr.recipe = r " +
+            "LEFT JOIN RecipeIngredient ri ON ri.recipe = r " +
+            "LEFT JOIN Ingredient i ON i = ri.ingredient " +
+            "WHERE r.name LIKE %:phrase% " +
+            "OR r.description like %:phrase% " +
+            "OR i.name like %:phrase% " +
+            "GROUP BY r.id " +
+            "ORDER BY AVG(rr.value) DESC, r.id")
+    Page<AverageRateRecipe> getByPhrase(
+            @Param(value = "phrase") String phrase,
+            Pageable pageable
+    );
 }

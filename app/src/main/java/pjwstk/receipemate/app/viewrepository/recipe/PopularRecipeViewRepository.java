@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.viewrepository;
+package pjwstk.receipemate.app.viewrepository.recipe;
 
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;

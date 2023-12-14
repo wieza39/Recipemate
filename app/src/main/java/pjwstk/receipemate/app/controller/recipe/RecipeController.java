@@ -5,16 +5,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.request.RecipeFindRequest;
 import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
-import pjwstk.receipemate.app.viewrepository.RecipeViewRepository;
+import pjwstk.receipemate.app.viewrepository.recipe.RecipeDetailedViewRepository;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/recipe")
 public class RecipeController {
-    private final RecipeViewRepository recipeViewRepository;
+    private final RecipeDetailedViewRepository recipeDetailedViewRepository;
 
-    public RecipeController(RecipeViewRepository recipeViewRepository) {
-        this.recipeViewRepository = recipeViewRepository;
+    public RecipeController(RecipeDetailedViewRepository recipeDetailedViewRepository) {
+        this.recipeDetailedViewRepository = recipeDetailedViewRepository;
     }
 
     @GetMapping("/{id}")
@@ -33,6 +33,6 @@ public class RecipeController {
                 0,
                 relatedRecipesLimit
         );
-        return this.recipeViewRepository.get(id, pageable);
+        return this.recipeDetailedViewRepository.find(id, pageable);
     }
 }

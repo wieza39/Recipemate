@@ -12,12 +12,14 @@ public class RecipeIngredientViewFactory {
     public RecipeIngredientView make(RecipeIngredient recipeIngredient) {
         if (recipeIngredient == null) return null;
 
-        return new RecipeIngredientView(
-                recipeIngredient.getIngredient().getId(),
-                recipeIngredient.getIngredient().getName(),
-                recipeIngredient.getCount(),
-                recipeIngredient.getMeasure().getName()
-        );
+        RecipeIngredientView recipeIngredientView = new RecipeIngredientView();
+
+        recipeIngredientView.setId(recipeIngredient.getIngredient().getId());
+        recipeIngredientView.setName(recipeIngredient.getIngredient().getName());
+        recipeIngredientView.setCount(recipeIngredient.getCount());
+        recipeIngredientView.setMeasure(recipeIngredient.getMeasure().getName());
+
+        return recipeIngredientView;
     }
 
     public List<RecipeIngredientView> makeList(List<RecipeIngredient> recipeIngredients) {

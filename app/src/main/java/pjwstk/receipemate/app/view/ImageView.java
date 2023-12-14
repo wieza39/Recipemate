@@ -1,10 +1,10 @@
 package pjwstk.receipemate.app.view;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 @Getter
-@AllArgsConstructor
+@Setter
 public class ImageView {
     private String href;
 
