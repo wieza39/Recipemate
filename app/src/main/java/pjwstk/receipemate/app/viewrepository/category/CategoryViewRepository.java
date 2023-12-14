@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.viewrepository;
+package pjwstk.receipemate.app.viewrepository.category;
 
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Category;
