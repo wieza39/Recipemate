@@ -10,5 +10,5 @@ public class CategoryView {
 
     private String name;
 
-    private CategoryImageView categoryImageView;
+    private CategoryImageView image;
 }

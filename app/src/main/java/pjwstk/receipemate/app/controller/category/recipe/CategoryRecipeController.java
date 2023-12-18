@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.view.PageView;
 import pjwstk.receipemate.app.viewrepository.category.recipe.CategoryRecipesPageViewRepository;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/category")
 public class CategoryRecipeController {
