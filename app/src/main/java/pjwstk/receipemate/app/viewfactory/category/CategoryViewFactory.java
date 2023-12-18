@@ -20,7 +20,7 @@ public class CategoryViewFactory {
 
         categoryView.setId(category.getId());
         categoryView.setName(category.getName());
-        categoryView.setCategoryImageView(categoryImageViewFactory.make(category.getCategoryImage()));
+        categoryView.setImage(categoryImageViewFactory.make(category.getCategoryImage()));
 
         return categoryView;
     }
