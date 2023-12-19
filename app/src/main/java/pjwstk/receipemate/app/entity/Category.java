@@ -1,6 +1,7 @@
 package pjwstk.receipemate.app.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,6 @@ public class Category {
     private List<Recipe> recipes;
 
     @OneToOne(mappedBy = "category")
-    @JsonBackReference
+    @JsonManagedReference
     private CategoryImage categoryImage;
 }

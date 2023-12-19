@@ -6,6 +6,7 @@ import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
 import pjwstk.receipemate.app.viewfactory.ImageViewFactory;
+import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.ingredient.RecipeIngredientViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.step.RecipeStepViewFactory;
 
@@ -17,14 +18,18 @@ public class RecipeDetailedViewFactory {
     private final RecipeStepViewFactory recipeStepViewFactory;
     private final ImageViewFactory imageViewFactory;
 
+    private final CategoryViewFactory categoryViewFactory;
+
     public RecipeDetailedViewFactory(
             RecipeIngredientViewFactory recipeIngredientViewFactory,
             RecipeStepViewFactory recipeStepViewFactory,
-            ImageViewFactory imageViewFactory
+            ImageViewFactory imageViewFactory,
+            CategoryViewFactory categoryViewFactory
     ) {
         this.recipeIngredientViewFactory = recipeIngredientViewFactory;
         this.recipeStepViewFactory = recipeStepViewFactory;
         this.imageViewFactory = imageViewFactory;
+        this.categoryViewFactory = categoryViewFactory;
     }
 
     public RecipeDetailedView make(AverageRateRecipe averageRateRecipe, List<RecipeView> relatedRecipes) {
@@ -37,7 +42,7 @@ public class RecipeDetailedViewFactory {
         recipeDetailedView.setDescription(recipe.getDescription());
         recipeDetailedView.setTimeConsuming(recipe.getTimeConsuming());
         recipeDetailedView.setDifficulty(recipe.getDifficulty().getType());
-        recipeDetailedView.setCategory(recipe.getCategory());
+        recipeDetailedView.setCategory(this.categoryViewFactory.make(recipe.getCategory()));
         recipeDetailedView.setRating(averageRateRecipe.getAverageRate());
         recipeDetailedView.setPortionCount(recipe.getPortionCount());
         recipeDetailedView.setCreatedAt(recipe.getCreatedAt());

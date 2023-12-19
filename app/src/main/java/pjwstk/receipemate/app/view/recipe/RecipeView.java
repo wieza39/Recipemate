@@ -2,8 +2,8 @@ package pjwstk.receipemate.app.view.recipe;
 
 import lombok.Getter;
 import lombok.Setter;
-import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.view.ImageView;
+import pjwstk.receipemate.app.view.category.CategoryView;
 
 import java.time.Instant;
 import java.util.List;
@@ -21,7 +21,7 @@ public class RecipeView {
 
     private String difficulty;
 
-    private Category category;
+    private CategoryView category;
 
     private Instant createdAt;
 

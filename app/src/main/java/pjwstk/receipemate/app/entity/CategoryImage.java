@@ -1,6 +1,6 @@
 package pjwstk.receipemate.app.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,7 +27,7 @@ public class CategoryImage {
 
     @OneToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
-    @JsonManagedReference
+    @JsonBackReference
     private Category category;
 
     @NotBlank(message = "Name is mandatory")

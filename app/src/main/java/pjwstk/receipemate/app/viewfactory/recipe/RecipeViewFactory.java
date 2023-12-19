@@ -6,6 +6,7 @@ import pjwstk.receipemate.app.entity.Recipe;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
 import pjwstk.receipemate.app.viewfactory.ImageViewFactory;
+import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,11 +14,14 @@ import java.util.stream.Collectors;
 @Service
 public class RecipeViewFactory {
     private final ImageViewFactory imageViewFactory;
+    private final CategoryViewFactory categoryViewFactory;
 
     public RecipeViewFactory(
-            ImageViewFactory imageViewFactory
+            ImageViewFactory imageViewFactory,
+            CategoryViewFactory categoryViewFactory
     ) {
         this.imageViewFactory = imageViewFactory;
+        this.categoryViewFactory = categoryViewFactory;
     }
 
     public RecipeView make(AverageRateRecipe averageRateRecipe) {
@@ -30,7 +34,7 @@ public class RecipeViewFactory {
         recipeView.setDescription(recipe.getDescription());
         recipeView.setTimeConsuming(recipe.getTimeConsuming());
         recipeView.setDifficulty(recipe.getDifficulty().getType());
-        recipeView.setCategory(recipe.getCategory());
+        recipeView.setCategory(this.categoryViewFactory.make(recipe.getCategory()));
         recipeView.setRating(averageRateRecipe.getAverageRate());
         recipeView.setPortionCount(recipe.getPortionCount());
         recipeView.setCreatedAt(recipe.getCreatedAt());
