@@ -34,14 +34,14 @@ public class PopularRecipeViewRepository {
         Page<AverageRateRecipe> averageRateRecipesPage = this.averageRateRecipeRepository.getPopular(pageable);
 
         if (averageRateRecipesPage.getContent().isEmpty()) {
-            throw new NotFoundException("Recipes not found");
+            throw new NotFoundException("Recipes not found!");
         }
 
-        List<RecipeView> popularRecipeDetailedViews = this.recipeViewFactory.makeList(averageRateRecipesPage.getContent());
+        List<RecipeView> popularRecipeViews = this.recipeViewFactory.makeList(averageRateRecipesPage.getContent());
 
         return this.pageViewFactory.make(
                 averageRateRecipesPage,
-                popularRecipeDetailedViews
+                popularRecipeViews
         );
     }
 }
