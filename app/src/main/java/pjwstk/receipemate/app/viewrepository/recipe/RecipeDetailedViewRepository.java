@@ -37,7 +37,7 @@ public class RecipeDetailedViewRepository {
 
         return this.recipeDetailedViewFactory.make(
                 recipe,
-                this.recipeViewFactory.makeList(relatedRecipes)
+                this.recipeViewFactory.makeList(relatedRecipes.getContent())
         );
     }
 

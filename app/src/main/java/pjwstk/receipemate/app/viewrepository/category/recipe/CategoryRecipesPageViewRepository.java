@@ -19,7 +19,6 @@ import java.util.Optional;
 
 @Service
 public class CategoryRecipesPageViewRepository {
-
     private final CategoryRepository categoryRepository;
     private final AverageRateRecipeRepository averageRateRecipeRepository;
     private final CategoryRecipesPageViewFactory categoryRecipesPageViewFactory;
@@ -42,7 +41,7 @@ public class CategoryRecipesPageViewRepository {
         }
 
         Page<AverageRateRecipe> averageRateRecipesPage = this.averageRateRecipeRepository.getByCategoryId(pageable, category.get());
-        List<RecipeView> recipeDetailedViewList = this.recipeViewFactory.makeList(averageRateRecipesPage);
+        List<RecipeView> recipeDetailedViewList = this.recipeViewFactory.makeList(averageRateRecipesPage.getContent());
 
         return this.categoryRecipesPageViewFactory.makeList(
                 averageRateRecipesPage,

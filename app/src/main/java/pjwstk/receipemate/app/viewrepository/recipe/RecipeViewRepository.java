@@ -30,7 +30,7 @@ public class RecipeViewRepository {
 
     public PageView getByPhrase(String phrase, Pageable pageable) {
         Page<AverageRateRecipe> averageRateRecipesPage = this.averageRateRecipeRepository.getByPhrase(phrase, pageable);
-        List<RecipeView> recipeViews = this.recipeViewFactory.makeList(averageRateRecipesPage);
+        List<RecipeView> recipeViews = this.recipeViewFactory.makeList(averageRateRecipesPage.getContent());
 
         return this.pageViewFactory.make(
                 averageRateRecipesPage,

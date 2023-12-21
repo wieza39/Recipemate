@@ -44,8 +44,8 @@ public class RecipeViewFactory {
         return recipeView;
     }
 
-    public List<RecipeView> makeList(Page<AverageRateRecipe> averageRateRecipesPage) {
-        return averageRateRecipesPage.getContent()
+    public List<RecipeView> makeList(List<AverageRateRecipe> averageRateRecipesPage) {
+        return averageRateRecipesPage
                 .stream()
                 .map(this::make)
                 .collect(Collectors.toList());
