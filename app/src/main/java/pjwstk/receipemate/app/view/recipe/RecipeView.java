@@ -5,7 +5,7 @@ import lombok.Setter;
 import pjwstk.receipemate.app.view.ImageView;
 import pjwstk.receipemate.app.view.category.CategoryView;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -23,9 +23,9 @@ public class RecipeView {
 
     private CategoryView category;
 
-    private Instant createdAt;
+    private LocalDateTime createdAt;
 
-    private Instant updatedAt;
+    private LocalDateTime updatedAt;
 
     private Double rating;
 

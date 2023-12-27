@@ -7,7 +7,7 @@ import pjwstk.receipemate.app.view.category.CategoryView;
 import pjwstk.receipemate.app.view.recipe.ingredient.RecipeIngredientView;
 import pjwstk.receipemate.app.view.recipe.step.RecipeStepView;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -29,9 +29,9 @@ public class RecipeDetailedView {
 
     private Integer portionCount;
 
-    private Instant createdAt;
+    private LocalDateTime createdAt;
 
-    private Instant updatedAt;
+    private LocalDateTime updatedAt;
 
     private List<ImageView> images;
 

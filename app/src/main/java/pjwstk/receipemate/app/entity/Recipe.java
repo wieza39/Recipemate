@@ -3,7 +3,9 @@ package pjwstk.receipemate.app.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +15,7 @@ import org.hibernate.annotations.SourceType;
 import org.hibernate.annotations.UpdateTimestamp;
 import pjwstk.receipemate.app.enums.RecipeDifficulty;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -37,13 +39,14 @@ public class Recipe {
     @OneToMany(mappedBy = "recipe", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<RecipeStep> steps;
 
-    @NotBlank(message = "Portion count is mandatory")
+    @Min(value = 1, message = "Portion count must be at least 1.")
     private Integer portionCount;
 
     @NotBlank(message = "Time consuming is mandatory")
     private String timeConsuming;
 
-    @NotBlank(message = "Difficult is mandatory")
+    @Enumerated(EnumType.STRING)
+    @NotNull
     private RecipeDifficulty difficulty;
 
     @ManyToOne
@@ -58,10 +61,10 @@ public class Recipe {
     private List<RecipeImage> images;
 
     @CreationTimestamp(source = SourceType.DB)
-    private Instant createdAt;
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp(source = SourceType.DB)
-    private Instant updatedAt;
+    private LocalDateTime updatedAt;
 
     @OneToMany
     @JoinColumn(name = "recipe_id", referencedColumnName = "id")

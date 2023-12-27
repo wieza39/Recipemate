@@ -23,6 +23,8 @@ public class RecipeStepViewFactory {
     }
 
     public List<RecipeStepView> makeList(List<RecipeStep> recipeSteps) {
+        if (recipeSteps == null) return null;
+
         return recipeSteps.stream()
                 .map(this::make)
                 .collect(Collectors.toList());

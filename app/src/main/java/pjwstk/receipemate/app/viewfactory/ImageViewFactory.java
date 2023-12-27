@@ -24,6 +24,8 @@ public class ImageViewFactory {
     }
 
     public List<ImageView> makeList(List<? extends Image> images) {
+        if (images == null) return null;
+
         return images.stream()
                 .map(this::make)
                 .collect(Collectors.toList());
