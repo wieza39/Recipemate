@@ -28,7 +28,7 @@ import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class RecipeDetailedViewRepositoryTest {
+class RecipeDetailedViewRepositoryUnitTest {
     @Mock
     private AverageRateRecipeRepository averageRateRecipeRepository;
     @Mock

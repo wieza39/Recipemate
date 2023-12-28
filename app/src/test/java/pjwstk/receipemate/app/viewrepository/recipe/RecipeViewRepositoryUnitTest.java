@@ -25,7 +25,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class RecipeViewRepositoryTest {
+class RecipeViewRepositoryUnitTest {
     @Mock
     AverageRateRecipeRepository averageRateRecipeRepository;
     @Mock
