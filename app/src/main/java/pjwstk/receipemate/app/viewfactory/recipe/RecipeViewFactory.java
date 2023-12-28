@@ -25,6 +25,8 @@ public class RecipeViewFactory {
     }
 
     public RecipeView make(AverageRateRecipe averageRateRecipe) {
+        if (averageRateRecipe == null || averageRateRecipe.getRecipe() == null) return null;
+
         Recipe recipe = averageRateRecipe.getRecipe();
 
         RecipeView recipeView = new RecipeView();
@@ -45,6 +47,8 @@ public class RecipeViewFactory {
     }
 
     public List<RecipeView> makeList(List<AverageRateRecipe> averageRateRecipesPage) {
+        if (averageRateRecipesPage == null || averageRateRecipesPage.isEmpty()) return null;
+
         return averageRateRecipesPage
                 .stream()
                 .map(this::make)

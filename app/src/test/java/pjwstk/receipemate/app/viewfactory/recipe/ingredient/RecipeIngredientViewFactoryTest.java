@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.test.context.event.annotation.BeforeTestMethod;
 import pjwstk.receipemate.app.entity.Ingredient;
 import pjwstk.receipemate.app.entity.Measure;
 import pjwstk.receipemate.app.entity.Recipe;
@@ -44,7 +43,7 @@ class RecipeIngredientViewFactoryTest {
     }
 
     @Test
-    void shouldMakeListMethodReturnNull() {
+    void shouldMakeListMethodReturnNullWhenNullProvide() {
         // when
         List<RecipeIngredientView> recipeIngredientViews = this.recipeIngredientViewFactory.makeList(null);
 
@@ -53,7 +52,16 @@ class RecipeIngredientViewFactoryTest {
     }
 
     @Test
-    void shouldMakeListMethodReturnRecipeIngredientView() {
+    void shouldMakeListMethodReturnNullWhenEmptyListProvide() {
+        // when
+        List<RecipeIngredientView> recipeIngredientViews = this.recipeIngredientViewFactory.makeList(List.of());
+
+        // then
+        assertThat(recipeIngredientViews).isNull();
+    }
+
+    @Test
+    void shouldMakeListMethodReturnRecipeIngredientViewList() {
         // given
         RecipeIngredient recipeIngredient = initRecipeIngredient();
         List<RecipeIngredient> recipeIngredients = List.of(recipeIngredient);

@@ -23,7 +23,7 @@ public class RecipeIngredientViewFactory {
     }
 
     public List<RecipeIngredientView> makeList(List<RecipeIngredient> recipeIngredients) {
-        if (recipeIngredients == null) return null;
+        if (recipeIngredients == null || recipeIngredients.isEmpty()) return null;
 
         return recipeIngredients.stream()
                 .map(this::make)

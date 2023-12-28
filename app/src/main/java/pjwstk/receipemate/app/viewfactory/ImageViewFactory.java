@@ -24,7 +24,7 @@ public class ImageViewFactory {
     }
 
     public List<ImageView> makeList(List<? extends Image> images) {
-        if (images == null) return null;
+        if (images == null || images.isEmpty()) return null;
 
         return images.stream()
                 .map(this::make)
