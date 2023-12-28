@@ -17,7 +17,7 @@ class RecipeStepViewFactoryTest {
     RecipeStepViewFactory recipeStepViewFactory;
 
     @Test
-    void shouldMakeMethodReturnNull() {
+    void shouldMakeMethodReturnNullWhenRecipeStepAreNull() {
         // when
         RecipeStepView recipeStepView = this.recipeStepViewFactory.make(null);
 
@@ -46,7 +46,7 @@ class RecipeStepViewFactoryTest {
     }
 
     @Test
-    void shouldMakeListMethodReturnNullWhenNullProvide() {
+    void shouldMakeListMethodReturnNullWhenRecipeStepsAreNull() {
         // when
         List<RecipeStepView> recipeStepViews = this.recipeStepViewFactory.makeList(null);
 

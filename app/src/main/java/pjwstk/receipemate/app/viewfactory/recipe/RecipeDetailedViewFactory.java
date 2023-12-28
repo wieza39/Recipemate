@@ -33,8 +33,6 @@ public class RecipeDetailedViewFactory {
     }
 
     public RecipeDetailedView make(AverageRateRecipe averageRateRecipe, List<RecipeView> relatedRecipes) {
-        if (averageRateRecipe == null) return null;
-
         Recipe recipe = averageRateRecipe.getRecipe();
 
         RecipeDetailedView recipeDetailedView = new RecipeDetailedView();

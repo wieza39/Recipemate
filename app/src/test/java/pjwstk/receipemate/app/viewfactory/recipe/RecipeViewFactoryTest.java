@@ -31,28 +31,25 @@ class RecipeViewFactoryTest {
     RecipeViewFactory recipeViewFactory;
 
     @Test
-    void shouldMakeReturnNullWhenAverageRateRecipeIsNull() {
-        // given
-        RecipeView recipeView = this.recipeViewFactory.make(null);
-
+    void shouldMakeMethodThrowNullPointerExceptionWhenAverageRateRecipeIsNull() {
         // then
-        assertNull(recipeView);
+        assertThrows(
+                NullPointerException.class,
+                () -> this.recipeViewFactory.make(null)
+        );
     }
 
     @Test
-    void shouldMakeReturnNullWhenRecipeIsNull() {
-        // given
-        AverageRateRecipe averageRateRecipe = new AverageRateRecipe(null, 4.5);
-
-        // when
-        RecipeView recipeView = this.recipeViewFactory.make(averageRateRecipe);
-
+    void shouldMakeMethodThrowNullPointerExceptionWhenRecipeIsNull() {
         // then
-        assertNull(recipeView);
+        assertThrows(
+                NullPointerException.class,
+                () -> this.recipeViewFactory.make(new AverageRateRecipe(null, 4.5))
+        );
     }
 
     @Test
-    void shouldMakeReturnRecipeView() {
+    void shouldMakeMethodReturnRecipeView() {
         // given
         Recipe recipe = new Recipe();
         recipe.setId(1);
@@ -79,25 +76,25 @@ class RecipeViewFactoryTest {
     }
 
     @Test
-    void shouldMakeListReturnNullWhenAverageRateRecipeListIsNull() {
-        // given
-        List<RecipeView> recipeViews = this.recipeViewFactory.makeList(null);
-
+    void shouldMakeListMethodReturnEmptyListWhenAverageRateRecipeListIsNull() {
         // then
-        assertNull(recipeViews);
+        assertThrows(
+                NullPointerException.class,
+                () -> this.recipeViewFactory.makeList(null)
+        );
     }
 
     @Test
-    void shouldMakeListReturnNullWhenAverageRateRecipesIsEmptyList() {
+    void shouldMakeListMethodReturnEmptyListWhenAverageRateRecipesIsEmptyList() {
         // when
         List<RecipeView> recipeViews = this.recipeViewFactory.makeList(List.of());
 
         // then
-        assertNull(recipeViews);
+        assertTrue(recipeViews.isEmpty());
     }
 
     @Test
-    void shouldMakeListReturnRecipeViews() {
+    void shouldMakeListMethodReturnRecipeViews() {
         // given
         Recipe recipe = new Recipe();
         recipe.setId(1);

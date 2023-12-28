@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -41,12 +42,54 @@ class RecipeDetailedViewFactoryTest {
     RecipeDetailedViewFactory recipeDetailedViewFactory;
 
     @Test
-    void shouldMakeListMethodReturnNullWhenNullProvide() {
+    void shouldMakeMethodThrowNullPointerExceptionWhenCredentialsAreNulls() {
         // when
-        RecipeDetailedView recipeDetailedView = this.recipeDetailedViewFactory.make(null, List.of());
+        // then
+        assertThrows(
+                NullPointerException.class,
+                () -> this.recipeDetailedViewFactory.make(null, null)
+        );
+    }
+
+    @Test
+    void shouldMakeMethodThrowNullPointerExceptionWhenOnlyAverageRateRecipeIsNull() {
+        // given
+        List<RecipeView> relatedRecipes = List.of(new RecipeView());
 
         // then
-        assertThat(recipeDetailedView).isNull();
+        assertThrows(
+                NullPointerException.class,
+                () -> this.recipeDetailedViewFactory.make(null, relatedRecipes)
+        );
+    }
+
+    @Test
+    void shouldMakeMethodReturnRecipeDetailedViewWithEmptyRelatedRecipesWhenOnlyListOfRelatedRecipesIsNull() {
+        // given
+        Recipe recipe = new Recipe();
+        recipe.setId(1);
+        recipe.setName("Name");
+        recipe.setDifficulty(RecipeDifficulty.HARD);
+
+        AverageRateRecipe averageRateRecipe = new AverageRateRecipe(
+                recipe,
+                1.0
+        );
+
+        CategoryView categoryView = new CategoryView();
+
+        // when
+        when(recipeIngredientViewFactory.makeList(any())).thenReturn(Collections.emptyList());
+        when(recipeStepViewFactory.makeList(any())).thenReturn(Collections.emptyList());
+        when(imageViewFactory.makeList(any())).thenReturn(Collections.emptyList());
+        when(categoryViewFactory.make(any())).thenReturn(categoryView);
+
+        RecipeDetailedView recipeDetailedView = this.recipeDetailedViewFactory.make(averageRateRecipe, null);
+
+        // then
+        assertThat(recipeDetailedView).isInstanceOf(RecipeDetailedView.class);
+        assertThat(recipeDetailedView.getRelatedRecipes()).isNull();
+        assertThat(recipeDetailedView.getCategory()).isEqualTo(categoryView);
     }
 
     @Test

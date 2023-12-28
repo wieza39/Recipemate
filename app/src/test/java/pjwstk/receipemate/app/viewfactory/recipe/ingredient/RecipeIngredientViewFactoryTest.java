@@ -20,7 +20,7 @@ class RecipeIngredientViewFactoryTest {
     RecipeIngredientViewFactory recipeIngredientViewFactory;
 
     @Test
-    void shouldMakeMethodReturnNull() {
+    void shouldMakeMethodReturnNullWhenRecipeIngredientIsNull() {
         // when
         RecipeIngredientView recipeIngredientView = this.recipeIngredientViewFactory.make(null);
 
@@ -43,7 +43,7 @@ class RecipeIngredientViewFactoryTest {
     }
 
     @Test
-    void shouldMakeListMethodReturnNullWhenNullProvide() {
+    void shouldMakeListMethodReturnNullWhenRecipeIngredientsIsNull() {
         // when
         List<RecipeIngredientView> recipeIngredientViews = this.recipeIngredientViewFactory.makeList(null);
 

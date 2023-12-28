@@ -16,7 +16,7 @@ public class RecipeRepositoryUnitTest {
     private RecipeRepository recipeRepository;
 
     @Test
-    public void shouldSaveRecipe() {
+    public void shouldSaveMethodRecipeSuccessfully() {
         // given
         Recipe recipe = new Recipe();
         recipe.setName("Test name");
