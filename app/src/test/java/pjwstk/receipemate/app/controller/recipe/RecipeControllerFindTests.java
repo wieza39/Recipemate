@@ -61,10 +61,10 @@ class RecipeControllerFindTests {
         this.recipeRepository.save(recipe);
 
         // when
-        MvcResult mvcResult = mockMvc.perform(get("/recipe/" + recipe.getId()))
+        MvcResult mvcResult = this.mockMvc.perform(get("/recipe/" + recipe.getId()))
                 .andExpect(status().is(200))
                 .andReturn();
-        RecipeDetailedView responseRecipeDetailedView = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), RecipeDetailedView.class);
+        RecipeDetailedView responseRecipeDetailedView = this.objectMapper.readValue(mvcResult.getResponse().getContentAsString(), RecipeDetailedView.class);
 
         // then
         assertThat(responseRecipeDetailedView).isNotNull();
@@ -80,7 +80,7 @@ class RecipeControllerFindTests {
         // given
         // when
         // then
-        mockMvc.perform(get("/recipe/{id}", 0).contentType(MediaType.APPLICATION_JSON))
+        this.mockMvc.perform(get("/recipe/{id}", 0).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andExpect(result -> assertTrue(result.getResolvedException() instanceof NotFoundException))
                 .andExpect(result -> assertEquals(

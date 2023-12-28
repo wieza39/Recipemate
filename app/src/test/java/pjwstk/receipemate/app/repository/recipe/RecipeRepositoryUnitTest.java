@@ -17,15 +17,16 @@ public class RecipeRepositoryUnitTest {
 
     @Test
     public void shouldSaveRecipe() {
+        // given
         Recipe recipe = new Recipe();
         recipe.setName("Test name");
         recipe.setDescription("Test description");
         recipe.setDifficulty(RecipeDifficulty.HARD);
-        System.out.println(recipe.getDifficulty());
         recipe.setCategory(null);
         recipe.setTimeConsuming("45");
         recipe.setUpdatedAt(LocalDateTime.now());
 
+        //then
         this.recipeRepository.save(recipe);
     }
 }

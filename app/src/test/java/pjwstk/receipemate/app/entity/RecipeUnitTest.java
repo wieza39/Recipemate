@@ -10,6 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class RecipeUnitTest {
     @Test
     public void shouldInitializeRecipe() {
+        // given
         Recipe recipe = new Recipe();
         recipe.setId(1);
         recipe.setName("Test name");
@@ -18,6 +19,7 @@ class RecipeUnitTest {
         recipe.setCategory(null);
         recipe.setUpdatedAt(LocalDateTime.now());
 
+        //then
         assertThat(recipe.getId()).isEqualTo(1);
         assertThat(recipe.getName()).isEqualTo("Test name");
         assertThat(recipe.getDescription()).isEqualTo("Test description");

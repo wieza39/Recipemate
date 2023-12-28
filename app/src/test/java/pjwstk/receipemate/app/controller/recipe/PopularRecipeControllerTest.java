@@ -45,12 +45,12 @@ class PopularRecipeControllerTest {
 
     @Test
     @Transactional
-    void shouldGetOnlyOnePageElement() throws Exception {
+    void shouldGetPopularRecipesMethodReturnOnlyOnePageElement() throws Exception {
+        // given
         Category category = new Category();
         category.setName("Test Category");
         this.categoryRepository.save(category);
 
-        // given
         Recipe recipe = new Recipe();
         recipe.setName("Test name");
         recipe.setDescription("Test description");
@@ -62,10 +62,10 @@ class PopularRecipeControllerTest {
         this.recipeRepository.save(recipe);
 
         // when
-        MvcResult mvcResult = mockMvc.perform(get("/recipe/popular"))
+        MvcResult mvcResult = this.mockMvc.perform(get("/recipe/popular"))
                 .andExpect(status().is(200))
                 .andReturn();
-        PageView pageView = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), PageView.class);
+        PageView pageView = this.objectMapper.readValue(mvcResult.getResponse().getContentAsString(), PageView.class);
 
         // then
         assertThat(pageView).isNotNull();
@@ -77,7 +77,7 @@ class PopularRecipeControllerTest {
         assertThat(pageView.getItems()).isInstanceOf(List.class);
         assertThat(pageView.getItems().get(0)).isNotNull();
 
-        RecipeView responseRecipeView = objectMapper.readValue(objectMapper.writeValueAsString(pageView.getItems().get(0)), RecipeView.class);
+        RecipeView responseRecipeView = this.objectMapper.readValue(this.objectMapper.writeValueAsString(pageView.getItems().get(0)), RecipeView.class);
         assertThat(responseRecipeView.getId()).isEqualTo(recipe.getId());
         assertThat(responseRecipeView.getName()).isEqualTo(recipe.getName());
         assertThat(responseRecipeView.getDescription()).isEqualTo(recipe.getDescription());
@@ -86,11 +86,11 @@ class PopularRecipeControllerTest {
     }
 
     @Test
-    void shouldThrowNotFoundException() throws Exception {
+    void shouldGetPopularRecipesThrowNotFoundException() throws Exception {
         // given
         // when
         // then
-        mockMvc.perform(get("/recipe/popular").contentType(MediaType.APPLICATION_JSON))
+        this.mockMvc.perform(get("/recipe/popular").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andExpect(result -> assertTrue(result.getResolvedException() instanceof NotFoundException))
                 .andExpect(result -> assertEquals(

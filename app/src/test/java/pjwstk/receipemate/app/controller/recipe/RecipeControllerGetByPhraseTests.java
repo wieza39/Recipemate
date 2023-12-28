@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -18,7 +17,6 @@ import pjwstk.receipemate.app.repository.CategoryRepository;
 import pjwstk.receipemate.app.repository.recipe.RecipeRepository;
 import pjwstk.receipemate.app.view.PageView;
 import pjwstk.receipemate.app.view.category.CategoryView;
-import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
 
 import java.time.LocalDateTime;
@@ -62,14 +60,13 @@ class RecipeControllerGetByPhraseTests {
         recipe.setCategory(category);
         recipe.setTimeConsuming("45");
         recipe.setUpdatedAt(LocalDateTime.now());
-
         this.recipeRepository.save(recipe);
 
         // when
-        MvcResult mvcResult = mockMvc.perform(get("/recipe/search?phrase=" + phrase))
+        MvcResult mvcResult = this.mockMvc.perform(get("/recipe/search?phrase=" + phrase))
                 .andExpect(status().is(200))
                 .andReturn();
-        PageView pageView = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), PageView.class);
+        PageView pageView = this.objectMapper.readValue(mvcResult.getResponse().getContentAsString(), PageView.class);
 
         // then
         assertThat(pageView).isNotNull();
@@ -77,7 +74,7 @@ class RecipeControllerGetByPhraseTests {
         assertThat(pageView.getItems().size()).isEqualTo(1);
         assertThat(pageView.getItems().get(0)).isNotNull();
 
-        RecipeView responseRecipeView = objectMapper.readValue(objectMapper.writeValueAsString(pageView.getItems().get(0)), RecipeView.class);
+        RecipeView responseRecipeView = this.objectMapper.readValue(this.objectMapper.writeValueAsString(pageView.getItems().get(0)), RecipeView.class);
         assertThat(responseRecipeView.getId()).isEqualTo(recipe.getId());
         assertThat(responseRecipeView.getName()).isEqualTo(recipe.getName());
         assertThat(responseRecipeView.getDescription()).isEqualTo(recipe.getDescription());
@@ -92,7 +89,7 @@ class RecipeControllerGetByPhraseTests {
         String phrase = "test";
         // when
         // then
-        mockMvc.perform(get("/recipe/search?phrase=" + phrase).contentType(MediaType.APPLICATION_JSON))
+        this.mockMvc.perform(get("/recipe/search?phrase=" + phrase).contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound())
                 .andExpect(result -> assertTrue(result.getResolvedException() instanceof NotFoundException))
                 .andExpect(result -> assertEquals(
