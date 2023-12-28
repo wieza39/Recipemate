@@ -15,7 +15,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
-class RecipeIngredientViewFactoryTest {
+class RecipeIngredientViewFactoryUnitTest {
     @InjectMocks
     RecipeIngredientViewFactory recipeIngredientViewFactory;
 

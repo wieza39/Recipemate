@@ -12,7 +12,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
-class RecipeStepViewFactoryTest {
+class RecipeStepViewFactoryUnitTest {
     @InjectMocks
     RecipeStepViewFactory recipeStepViewFactory;
 
