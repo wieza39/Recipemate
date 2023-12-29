@@ -13,9 +13,9 @@ import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.entity.Recipe;
 import pjwstk.receipemate.app.enums.RecipeDifficulty;
 import pjwstk.receipemate.app.exception.NotFoundException;
-import pjwstk.receipemate.app.repository.CategoryRepository;
+import pjwstk.receipemate.app.repository.category.CategoryRepository;
 import pjwstk.receipemate.app.repository.recipe.RecipeRepository;
-import pjwstk.receipemate.app.view.PageView;
+import pjwstk.receipemate.app.view.page.PageView;
 import pjwstk.receipemate.app.view.category.CategoryView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
 

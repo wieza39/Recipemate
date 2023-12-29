@@ -5,9 +5,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.exception.NotFoundException;
-import pjwstk.receipemate.app.repository.CategoryRepository;
-import pjwstk.receipemate.app.view.PageView;
-import pjwstk.receipemate.app.viewfactory.PageViewFactory;
+import pjwstk.receipemate.app.repository.category.CategoryRepository;
+import pjwstk.receipemate.app.view.page.PageView;
+import pjwstk.receipemate.app.viewfactory.page.PageViewFactory;
 import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 
 @Service
@@ -23,7 +23,7 @@ public class CategoryViewRepository {
     }
 
     public PageView getList(Pageable pageable) {
-        Page<Category> categories = this.categoryRepository.findAll(pageable);
+        Page<Category> categories = this.categoryRepository.getWithRecipes(pageable);
 
         if (categories.getContent().isEmpty()) {
             throw new NotFoundException("Categories not found");

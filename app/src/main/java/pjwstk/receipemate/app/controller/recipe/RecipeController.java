@@ -4,7 +4,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.request.RecipeFindRequest;
-import pjwstk.receipemate.app.view.PageView;
+import pjwstk.receipemate.app.view.page.PageView;
 import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
 import pjwstk.receipemate.app.viewrepository.recipe.RecipeDetailedViewRepository;
 import pjwstk.receipemate.app.viewrepository.recipe.RecipeViewRepository;

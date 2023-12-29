@@ -1,8 +1,8 @@
-package pjwstk.receipemate.app.viewfactory;
+package pjwstk.receipemate.app.viewfactory.image;
 
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Image;
-import pjwstk.receipemate.app.view.ImageView;
+import pjwstk.receipemate.app.view.image.ImageView;
 
 import java.util.List;
 import java.util.stream.Collectors;

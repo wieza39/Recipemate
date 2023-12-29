@@ -1,8 +1,8 @@
-package pjwstk.receipemate.app.viewfactory;
+package pjwstk.receipemate.app.viewfactory.page;
 
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
-import pjwstk.receipemate.app.view.PageView;
+import pjwstk.receipemate.app.view.page.PageView;
 
 import java.util.List;
 

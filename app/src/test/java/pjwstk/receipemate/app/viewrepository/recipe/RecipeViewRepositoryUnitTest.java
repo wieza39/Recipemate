@@ -11,9 +11,9 @@ import org.springframework.data.domain.Pageable;
 import pjwstk.receipemate.app.exception.NotFoundException;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.repository.recipe.AverageRateRecipeRepository;
-import pjwstk.receipemate.app.view.PageView;
+import pjwstk.receipemate.app.view.page.PageView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
-import pjwstk.receipemate.app.viewfactory.PageViewFactory;
+import pjwstk.receipemate.app.viewfactory.page.PageViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.RecipeViewFactory;
 
 import java.util.List;
