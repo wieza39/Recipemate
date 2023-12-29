@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.exception.NotFoundException;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
-import pjwstk.receipemate.app.repository.CategoryRepository;
+import pjwstk.receipemate.app.repository.category.CategoryRepository;
 import pjwstk.receipemate.app.repository.recipe.AverageRateRecipeRepository;
 import org.springframework.data.domain.Pageable;
 import pjwstk.receipemate.app.view.category.recipe.CategoryRecipesPageView;

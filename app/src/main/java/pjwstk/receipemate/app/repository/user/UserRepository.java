@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.repository;
+package pjwstk.receipemate.app.repository.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

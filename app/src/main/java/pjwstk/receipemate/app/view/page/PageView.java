@@ -1,4 +1,4 @@
-package pjwstk.receipemate.app.view;
+package pjwstk.receipemate.app.view.page;
 
 import lombok.Getter;
 import lombok.Setter;

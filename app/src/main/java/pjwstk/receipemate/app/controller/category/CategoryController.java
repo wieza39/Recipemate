@@ -4,10 +4,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pjwstk.receipemate.app.view.PageView;
+import pjwstk.receipemate.app.view.page.PageView;
 import pjwstk.receipemate.app.viewrepository.category.CategoryViewRepository;
-
-import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController

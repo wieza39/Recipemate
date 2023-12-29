@@ -5,7 +5,7 @@ import pjwstk.receipemate.app.entity.Recipe;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
-import pjwstk.receipemate.app.viewfactory.ImageViewFactory;
+import pjwstk.receipemate.app.viewfactory.image.ImageViewFactory;
 import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.ingredient.RecipeIngredientViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.step.RecipeStepViewFactory;

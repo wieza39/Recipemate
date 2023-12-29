@@ -10,7 +10,7 @@ import pjwstk.receipemate.app.enums.RecipeDifficulty;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.view.category.CategoryView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
-import pjwstk.receipemate.app.viewfactory.ImageViewFactory;
+import pjwstk.receipemate.app.viewfactory.image.ImageViewFactory;
 import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 
 import java.util.Collections;

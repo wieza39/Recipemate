@@ -1,11 +1,10 @@
 package pjwstk.receipemate.app.viewfactory.recipe;
 
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Recipe;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
-import pjwstk.receipemate.app.viewfactory.ImageViewFactory;
+import pjwstk.receipemate.app.viewfactory.image.ImageViewFactory;
 import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 
 import java.util.List;
