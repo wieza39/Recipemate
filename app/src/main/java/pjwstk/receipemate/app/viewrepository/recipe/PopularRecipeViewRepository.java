@@ -2,6 +2,7 @@ package pjwstk.receipemate.app.viewrepository.recipe;
 
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
+import pjwstk.receipemate.app.exception.NotFoundException;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
 import pjwstk.receipemate.app.viewfactory.PageViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.RecipeViewFactory;
@@ -31,11 +32,16 @@ public class PopularRecipeViewRepository {
 
     public PageView getList(Pageable pageable) {
         Page<AverageRateRecipe> averageRateRecipesPage = this.averageRateRecipeRepository.getPopular(pageable);
-        List<RecipeView> popularRecipeDetailedViews = this.recipeViewFactory.makeList(averageRateRecipesPage);
+
+        if (averageRateRecipesPage.getContent().isEmpty()) {
+            throw new NotFoundException("Recipes not found!");
+        }
+
+        List<RecipeView> popularRecipeViews = this.recipeViewFactory.makeList(averageRateRecipesPage.getContent());
 
         return this.pageViewFactory.make(
                 averageRateRecipesPage,
-                popularRecipeDetailedViews
+                popularRecipeViews
         );
     }
 }

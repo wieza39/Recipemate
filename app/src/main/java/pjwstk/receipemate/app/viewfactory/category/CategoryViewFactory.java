@@ -16,6 +16,8 @@ public class CategoryViewFactory {
     }
 
     public CategoryView make(Category category) {
+        if (category == null) return null;
+
         CategoryView categoryView = new CategoryView();
 
         categoryView.setId(category.getId());
@@ -26,6 +28,8 @@ public class CategoryViewFactory {
     }
 
     public List<CategoryView> makeList(List<Category> categories) {
+        if (categories == null) return null;
+
         return categories.stream()
                 .map(this::make)
                 .collect(Collectors.toList());

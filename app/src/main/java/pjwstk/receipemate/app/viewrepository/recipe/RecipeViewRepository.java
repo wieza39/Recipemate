@@ -3,6 +3,7 @@ package pjwstk.receipemate.app.viewrepository.recipe;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import pjwstk.receipemate.app.exception.NotFoundException;
 import pjwstk.receipemate.app.view.PageView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
 import pjwstk.receipemate.app.viewfactory.PageViewFactory;
@@ -30,7 +31,12 @@ public class RecipeViewRepository {
 
     public PageView getByPhrase(String phrase, Pageable pageable) {
         Page<AverageRateRecipe> averageRateRecipesPage = this.averageRateRecipeRepository.getByPhrase(phrase, pageable);
-        List<RecipeView> recipeViews = this.recipeViewFactory.makeList(averageRateRecipesPage);
+
+        if (averageRateRecipesPage.getContent().isEmpty()) {
+            throw new NotFoundException("Recipes not found!");
+        }
+
+        List<RecipeView> recipeViews = this.recipeViewFactory.makeList(averageRateRecipesPage.getContent());
 
         return this.pageViewFactory.make(
                 averageRateRecipesPage,

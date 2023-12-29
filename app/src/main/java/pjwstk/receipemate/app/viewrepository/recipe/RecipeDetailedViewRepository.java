@@ -10,6 +10,8 @@ import pjwstk.receipemate.app.view.recipe.RecipeDetailedView;
 import pjwstk.receipemate.app.viewfactory.recipe.RecipeDetailedViewFactory;
 import pjwstk.receipemate.app.viewfactory.recipe.RecipeViewFactory;
 
+import java.util.Optional;
+
 @Service
 public class RecipeDetailedViewRepository {
     private final AverageRateRecipeRepository averageRateRecipeRepository;
@@ -27,17 +29,17 @@ public class RecipeDetailedViewRepository {
     }
 
     public RecipeDetailedView find(long id, Pageable pageable) {
-        AverageRateRecipe recipe = this.averageRateRecipeRepository.findById(id);
+        Optional<AverageRateRecipe> recipe = this.averageRateRecipeRepository.findById(id);
 
-        if (recipe == null) {
+        if (recipe.isEmpty()) {
             throw new NotFoundException("Recipe not found!");
         }
 
-        Page<AverageRateRecipe> relatedRecipes = this.averageRateRecipeRepository.getRelated(recipe.getRecipe(), pageable);
+        Page<AverageRateRecipe> relatedRecipes = this.averageRateRecipeRepository.getRelated(recipe.get().getRecipe(), pageable);
 
         return this.recipeDetailedViewFactory.make(
-                recipe,
-                this.recipeViewFactory.makeList(relatedRecipes)
+                recipe.get(),
+                this.recipeViewFactory.makeList(relatedRecipes.getContent())
         );
     }
 

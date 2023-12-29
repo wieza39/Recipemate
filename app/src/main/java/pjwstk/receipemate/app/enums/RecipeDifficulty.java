@@ -8,7 +8,7 @@ public enum RecipeDifficulty {
     MEDIUM("Średni"),
     HARD("Trudny");
 
-    private String type;
+    private final String type;
 
     RecipeDifficulty(String type) {
         this.type = type;
