@@ -31,5 +31,5 @@ public class RecipeView {
 
     private Integer portionCount;
 
-    private List<ImageView> images;
+    private List<RecipeImageView> images;
 }

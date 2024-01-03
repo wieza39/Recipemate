@@ -20,7 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Table(name = "category_image")
-public class CategoryImage {
+public class CategoryImage implements Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -30,8 +30,8 @@ public class CategoryImage {
     @JsonBackReference
     private Category category;
 
-    @NotBlank(message = "Name is mandatory")
-    private String name;
+    @NotBlank(message = "Href is mandatory")
+    private String href;
 
     @NotBlank(message = "Alt is mandatory")
     private String alt;
