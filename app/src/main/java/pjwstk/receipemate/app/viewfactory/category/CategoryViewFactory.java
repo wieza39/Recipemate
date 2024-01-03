@@ -3,16 +3,17 @@ package pjwstk.receipemate.app.viewfactory.category;
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.view.category.CategoryView;
+import pjwstk.receipemate.app.viewfactory.image.ImageViewFactory;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class CategoryViewFactory {
-    private final CategoryImageViewFactory categoryImageViewFactory;
+    private final ImageViewFactory imageViewFactory;
 
-    public CategoryViewFactory(CategoryImageViewFactory categoryImageViewFactory) {
-        this.categoryImageViewFactory = categoryImageViewFactory;
+    public CategoryViewFactory(ImageViewFactory imageViewFactory) {
+        this.imageViewFactory = imageViewFactory;
     }
 
     public CategoryView make(Category category) {
@@ -22,7 +23,7 @@ public class CategoryViewFactory {
 
         categoryView.setId(category.getId());
         categoryView.setName(category.getName());
-        categoryView.setImage(categoryImageViewFactory.make(category.getCategoryImage()));
+        categoryView.setImage(imageViewFactory.make(category.getCategoryImage()));
 
         return categoryView;
     }

@@ -2,6 +2,7 @@ package pjwstk.receipemate.app.view.category;
 
 import lombok.Getter;
 import lombok.Setter;
+import pjwstk.receipemate.app.view.image.ImageView;
 
 @Getter
 @Setter
@@ -10,5 +11,5 @@ public class CategoryView {
 
     private String name;
 
-    private CategoryImageView image;
+    private ImageView image;
 }

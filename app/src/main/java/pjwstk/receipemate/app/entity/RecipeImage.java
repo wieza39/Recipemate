@@ -21,10 +21,8 @@ public class RecipeImage implements Image {
     @JsonBackReference
     private Recipe recipe;
 
-    @NotBlank(message = "Name is mandatory")
-    private String name;
-
-    private boolean isMain = false;
+    @NotBlank(message = "Href is mandatory")
+    private String href;
 
     @NotBlank(message = "Alt is mandatory")
     private String alt;
@@ -32,8 +30,5 @@ public class RecipeImage implements Image {
     @NotBlank(message = "Title is mandatory")
     private String title;
 
-    @Override
-    public boolean getIsMain() {
-        return this.isMain;
-    }
+    private boolean isMain = false;
 }
