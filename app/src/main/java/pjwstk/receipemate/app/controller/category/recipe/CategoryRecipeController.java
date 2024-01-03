@@ -20,11 +20,11 @@ public class CategoryRecipeController {
     @GetMapping("/{id}/recipes")
     @ResponseBody
     public ResponseEntity<PageView> getById(
-            @RequestParam(defaultValue = "0") int pageNumber,
+            @RequestParam(defaultValue = "1") int pageNumber,
             @RequestParam(defaultValue = "12") int limit,
             @PathVariable(value = "id") long categoryId
     ) {
-        Pageable pageable = PageRequest.of(pageNumber, limit);
+        Pageable pageable = PageRequest.of(pageNumber - 1, limit);
         return ResponseEntity.ok(categoryRecipesPageViewRepository.getList(pageable, categoryId));
     }
 }
