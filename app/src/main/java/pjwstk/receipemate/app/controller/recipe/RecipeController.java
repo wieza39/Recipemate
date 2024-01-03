@@ -47,10 +47,10 @@ public class RecipeController {
     @ResponseBody
     public PageView getByPhrase(
             @RequestParam String phrase,
-            @RequestParam(defaultValue = "0") int pageNumber,
+            @RequestParam(defaultValue = "1") int pageNumber,
             @RequestParam(defaultValue = "12") int limit
     ) {
-        Pageable pageable = PageRequest.of(pageNumber, limit);
+        Pageable pageable = PageRequest.of(pageNumber - 1, limit);
         return this.recipeViewRepository.getByPhrase(phrase, pageable);
     }
 }
