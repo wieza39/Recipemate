@@ -15,7 +15,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 
-public class CategoryViewFactoryTest {
+public class CategoryViewFactoryUnitTest {
 
     private CategoryViewFactory categoryViewFactory;
     private Category category;
