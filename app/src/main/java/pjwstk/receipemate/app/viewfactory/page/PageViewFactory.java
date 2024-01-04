@@ -11,7 +11,7 @@ public class PageViewFactory {
     public PageView make(Page<?> page, List<?> items) {
         PageView pageView = new PageView();
 
-        pageView.setPageNumber(page.getPageable().getPageNumber());
+        pageView.setPageNumber(page.getPageable().getPageNumber() + 1);
         pageView.setPageSize(page.getPageable().getPageSize());
         pageView.setTotalElements(page.getTotalElements());
         pageView.setTotalPages(page.getTotalPages());
