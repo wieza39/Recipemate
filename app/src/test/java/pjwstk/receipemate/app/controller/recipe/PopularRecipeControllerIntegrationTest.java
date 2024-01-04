@@ -71,7 +71,7 @@ class PopularRecipeControllerIntegrationTest {
         assertThat(pageView).isInstanceOf(PageView.class);
         assertThat(pageView.getTotalElements()).isEqualTo(1);
         assertThat(pageView.getTotalPages()).isEqualTo(1);
-        assertThat(pageView.getPageNumber()).isEqualTo(0);
+        assertThat(pageView.getPageNumber()).isEqualTo(1);
         assertThat(pageView.getItems()).isNotEmpty();
         assertThat(pageView.getItems()).isInstanceOf(List.class);
         assertThat(pageView.getItems().get(0)).isNotNull();
