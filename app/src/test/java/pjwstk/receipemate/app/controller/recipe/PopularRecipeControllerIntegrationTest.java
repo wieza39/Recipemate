@@ -58,7 +58,6 @@ class PopularRecipeControllerIntegrationTest {
         recipe.setCategory(category);
         recipe.setTimeConsuming("45");
         recipe.setUpdatedAt(LocalDateTime.now());
-
         this.recipeRepository.save(recipe);
 
         // when

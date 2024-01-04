@@ -4,7 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Category;
 import pjwstk.receipemate.app.exception.NotFoundException;
-import pjwstk.receipemate.app.model.AverageRateRecipe;
+import pjwstk.receipemate.app.model.AverageRateRecipeInterface;
 import pjwstk.receipemate.app.repository.category.CategoryRepository;
 import pjwstk.receipemate.app.repository.recipe.AverageRateRecipeRepository;
 import org.springframework.data.domain.Pageable;
@@ -39,14 +39,14 @@ public class CategoryRecipesPageViewRepository {
         this.recipeViewFactory = recipeViewFactory;
     }
 
-    public CategoryRecipesPageView getList(Pageable pageable, long categoryId) {
+    public CategoryRecipesPageView getList(long categoryId, Pageable pageable) {
         Optional<Category> category = this.categoryRepository.findById(categoryId);
 
         if (category.isEmpty()) {
             throw new NotFoundException("Category not found");
         }
 
-        Page<AverageRateRecipe> averageRateRecipesPage = this.averageRateRecipeRepository.getByCategoryId(pageable, category.get());
+        Page<AverageRateRecipeInterface> averageRateRecipesPage = this.averageRateRecipeRepository.getByCategoryId(category.get(), pageable);
         List<RecipeView> recipeDetailedViewList = this.recipeViewFactory.makeList(averageRateRecipesPage.getContent());
 
         return this.categoryRecipesPageViewFactory.makeList(
