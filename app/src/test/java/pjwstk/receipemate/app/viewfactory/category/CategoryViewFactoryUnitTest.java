@@ -3,9 +3,10 @@ package pjwstk.receipemate.app.viewfactory.category;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pjwstk.receipemate.app.entity.CategoryImage;
-import pjwstk.receipemate.app.view.category.CategoryImageView;
 import pjwstk.receipemate.app.view.category.CategoryView;
 import pjwstk.receipemate.app.entity.Category;
+import pjwstk.receipemate.app.view.image.ImageView;
+import pjwstk.receipemate.app.viewfactory.image.ImageViewFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +20,12 @@ public class CategoryViewFactoryUnitTest {
 
     private CategoryViewFactory categoryViewFactory;
     private Category category;
-    private CategoryImageView expectedCategoryImageView;
+    private ImageView expectedImageView;
 
     @BeforeEach
     public void setup() {
         //given
-        CategoryImageViewFactory mockCategoryImageViewFactory = mock(CategoryImageViewFactory.class);
+        ImageViewFactory mockCategoryImageViewFactory = mock(ImageViewFactory.class);
         categoryViewFactory = new CategoryViewFactory(mockCategoryImageViewFactory);
 
         //Initialize Category
@@ -36,8 +37,8 @@ public class CategoryViewFactoryUnitTest {
         category.setCategoryImage(categoryImage);
 
         //Mock mapping CategoryImage to CategoryImageView
-        expectedCategoryImageView = new CategoryImageView();
-        when(mockCategoryImageViewFactory.make(categoryImage)).thenReturn(expectedCategoryImageView);
+        expectedImageView = new ImageView();
+        when(mockCategoryImageViewFactory.make(categoryImage)).thenReturn(expectedImageView);
     }
 
     @Test
@@ -50,7 +51,7 @@ public class CategoryViewFactoryUnitTest {
         assertNotNull(categoryView);
         assertEquals(1, categoryView.getId());
         assertEquals("Test Name", categoryView.getName());
-        assertEquals(expectedCategoryImageView, categoryView.getImage());
+        assertEquals(expectedImageView, categoryView.getImage());
     }
 
     @Test
