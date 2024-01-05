@@ -20,10 +20,10 @@ public class CategoryController {
     @GetMapping
     @ResponseBody
     public ResponseEntity<PageView> getAll(
-            @RequestParam(defaultValue = "0") int pageNumber,
+            @RequestParam(defaultValue = "1") int pageNumber,
             @RequestParam(defaultValue = "12") int limit
     ) {
-        Pageable pageable = PageRequest.of(pageNumber, limit);
+        Pageable pageable = PageRequest.of(pageNumber - 1, limit);
         return ResponseEntity.ok(categoryViewRepository.getList(pageable));
     }
 }

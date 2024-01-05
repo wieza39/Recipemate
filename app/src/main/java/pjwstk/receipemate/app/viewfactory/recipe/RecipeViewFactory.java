@@ -2,28 +2,28 @@ package pjwstk.receipemate.app.viewfactory.recipe;
 
 import org.springframework.stereotype.Service;
 import pjwstk.receipemate.app.entity.Recipe;
-import pjwstk.receipemate.app.model.AverageRateRecipe;
+import pjwstk.receipemate.app.model.AverageRateRecipeInterface;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
-import pjwstk.receipemate.app.viewfactory.image.ImageViewFactory;
 import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
 public class RecipeViewFactory {
-    private final ImageViewFactory imageViewFactory;
+    private final RecipeImageViewFactory recipeImageViewFactory;
     private final CategoryViewFactory categoryViewFactory;
 
     public RecipeViewFactory(
-            ImageViewFactory imageViewFactory,
+            RecipeImageViewFactory recipeImageViewFactory,
             CategoryViewFactory categoryViewFactory
     ) {
-        this.imageViewFactory = imageViewFactory;
+        this.recipeImageViewFactory = recipeImageViewFactory;
         this.categoryViewFactory = categoryViewFactory;
     }
 
-    public RecipeView make(AverageRateRecipe averageRateRecipe) {
+    public RecipeView make(AverageRateRecipeInterface averageRateRecipe) {
         Recipe recipe = averageRateRecipe.getRecipe();
 
         RecipeView recipeView = new RecipeView();
@@ -38,12 +38,14 @@ public class RecipeViewFactory {
         recipeView.setPortionCount(recipe.getPortionCount());
         recipeView.setCreatedAt(recipe.getCreatedAt());
         recipeView.setUpdatedAt(recipe.getUpdatedAt());
-        recipeView.setImages(this.imageViewFactory.makeList(recipe.getImages()));
+        recipeView.setImages(this.recipeImageViewFactory.makeList(recipe.getImages()));
 
         return recipeView;
     }
 
-    public List<RecipeView> makeList(List<AverageRateRecipe> averageRateRecipesPage) {
+    public List<RecipeView> makeList(List<? extends AverageRateRecipeInterface> averageRateRecipesPage) {
+        if (averageRateRecipesPage == null) return Collections.emptyList();
+
         return averageRateRecipesPage
                 .stream()
                 .map(this::make)

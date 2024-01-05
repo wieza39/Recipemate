@@ -10,7 +10,6 @@ import pjwstk.receipemate.app.enums.RecipeDifficulty;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 import pjwstk.receipemate.app.view.category.CategoryView;
 import pjwstk.receipemate.app.view.recipe.RecipeView;
-import pjwstk.receipemate.app.viewfactory.image.ImageViewFactory;
 import pjwstk.receipemate.app.viewfactory.category.CategoryViewFactory;
 
 import java.util.Collections;
@@ -24,7 +23,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class RecipeViewFactoryUnitTest {
     @Mock
-    ImageViewFactory imageViewFactory;
+    RecipeImageViewFactory recipeImageViewFactory;
     @Mock
     CategoryViewFactory categoryViewFactory;
     @InjectMocks
@@ -64,7 +63,7 @@ class RecipeViewFactoryUnitTest {
         CategoryView categoryView = new CategoryView();
 
         // when
-        when(this.imageViewFactory.makeList(any())).thenReturn(Collections.emptyList());
+        when(this.recipeImageViewFactory.makeList(any())).thenReturn(Collections.emptyList());
         when(this.categoryViewFactory.make(any())).thenReturn(categoryView);
 
         RecipeView recipeView = this.recipeViewFactory.make(averageRateRecipe);
@@ -77,11 +76,11 @@ class RecipeViewFactoryUnitTest {
 
     @Test
     void shouldMakeListMethodReturnEmptyListWhenAverageRateRecipeListIsNull() {
+        // when
+        List<RecipeView> recipeViews = this.recipeViewFactory.makeList(null);
+
         // then
-        assertThrows(
-                NullPointerException.class,
-                () -> this.recipeViewFactory.makeList(null)
-        );
+        assertTrue(recipeViews.isEmpty());
     }
 
     @Test
@@ -111,7 +110,7 @@ class RecipeViewFactoryUnitTest {
         CategoryView categoryView = new CategoryView();
 
         // when
-        when(this.imageViewFactory.makeList(any())).thenReturn(Collections.emptyList());
+        when(this.recipeImageViewFactory.makeList(any())).thenReturn(Collections.emptyList());
         when(this.categoryViewFactory.make(any())).thenReturn(categoryView);
 
         List<RecipeView> recipeViews = this.recipeViewFactory.makeList(averageRateRecipes);

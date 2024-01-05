@@ -11,6 +11,4 @@ public class ImageView {
     private String alt;
 
     private String title;
-
-    private Boolean isMain;
 }
