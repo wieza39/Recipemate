@@ -42,7 +42,7 @@ public class CategoryViewFactoryUnitTest {
     }
 
     @Test
-    void make_ShouldMapCategoryToCategoryView() {
+    void shouldMapCategoryToCategoryView() {
         // given setup()
         //when
         CategoryView categoryView = categoryViewFactory.make(category);
@@ -55,7 +55,7 @@ public class CategoryViewFactoryUnitTest {
     }
 
     @Test
-    void makeList_ShouldReturnListOfCategoryView() {
+    void shouldReturnListOfCategoryView() {
         //given setup()
         Category category2 = new Category();
         category2.setId(2);

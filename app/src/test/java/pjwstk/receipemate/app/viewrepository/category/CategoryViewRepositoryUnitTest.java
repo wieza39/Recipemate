@@ -41,18 +41,15 @@ public class CategoryViewRepositoryUnitTest {
     @InjectMocks
     CategoryViewRepository categoryViewRepository;
 
-
     @Test
-    public void getList_shouldReturnPageViewOfCategories() {
+    public void shouldReturnPageViewOfCategories() {
         //given
         Pageable pageable = Pageable.unpaged();
-        List<Category> categories = new ArrayList<>();
         Category category1 = new Category();
-        Category category2 = new Category();
         category1.setId(1);
+        Category category2 = new Category();
         category2.setId(2);
-        categories.add(category1);
-        categories.add(category2);
+        List<Category> categories = List.of(category1, category2);
 
         //when
         Page<Category> categoryPage = new PageImpl<>(categories);
@@ -68,9 +65,8 @@ public class CategoryViewRepositoryUnitTest {
         //then
         assertThat(result, is(expectedPageView));
     }
-
     @Test
-    public void getList_shouldThrowNotFoundException() {
+    public void shouldThrowNotFoundException() {
         //given
         Pageable pageable = Pageable.unpaged();
         Page<Category> emptyCategoryPage = new PageImpl<>(Collections.emptyList());
@@ -80,7 +76,5 @@ public class CategoryViewRepositoryUnitTest {
         NotFoundException exception = assertThrows(NotFoundException.class, () -> { this.categoryViewRepository.getList(pageable);
         });
         assertEquals("Categories not found", exception.getMessage());
-
     }
-
 }

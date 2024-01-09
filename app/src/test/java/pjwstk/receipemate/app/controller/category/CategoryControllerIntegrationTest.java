@@ -47,7 +47,7 @@ public class CategoryControllerIntegrationTest {
     private PageViewFactory pageViewFactory;
 
     @Test
-    public void getAll_shouldReturnPageViewOfCategoryView() throws Exception {
+    public void shouldReturnPageViewOfCategoryView() throws Exception {
         // Given
         Pageable pageable = PageRequest.of(0, 12);
 
