@@ -38,9 +38,6 @@ public class CategoryRecipeController {
                 this.recipeSortResolver.getSort(recipeSort)
         );
 
-        return ResponseEntity.ok(this.categoryRecipesPageViewRepository.getList(
-                categoryId,
-                pageable
-        ));
+        return ResponseEntity.ok(this.categoryRecipesPageViewRepository.getList(categoryId, pageable));
     }
 }
