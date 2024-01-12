@@ -26,6 +26,7 @@ public class EmailSender {
 
     public void send(Mail mail) {
         SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom(emailConfig.getFrom());
         message.setTo(mail.getTo());
         message.setSubject(mail.getSubject());
         message.setText(mail.getText());

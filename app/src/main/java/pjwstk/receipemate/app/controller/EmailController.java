@@ -1,5 +1,6 @@
 package pjwstk.receipemate.app.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.mailfactory.ShoppingListMailFactory;
@@ -22,11 +23,11 @@ public class EmailController {
         this.shoppingListMailFactory = shoppingListMailFactory;
     }
 
-    @PostMapping("send-recipe-list")
-    public ResponseEntity.BodyBuilder send(@RequestBody EmailRequest emailRequest) {
+    @PostMapping( "/send-recipe-list")
+    public ResponseEntity<Object> send(@Valid @RequestBody EmailRequest emailRequest) {
         Mail mail = this.shoppingListMailFactory.make(emailRequest);
         this.emailSender.send(mail);
 
-        return ResponseEntity.status(200);
+        return ResponseEntity.ok().build();
     }
 }

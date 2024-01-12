@@ -17,6 +17,8 @@ public class EmailConfig {
     private String username;
     @Value("${spring.mail.password}")
     private String password;
+    @Value("${spring.mail.from}")
+    private String from;
 
     @Override
     public String toString() {
