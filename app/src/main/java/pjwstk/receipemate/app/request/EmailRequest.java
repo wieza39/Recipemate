@@ -15,5 +15,5 @@ public class EmailRequest {
     private String to;
 
     @NotEmpty(message = "Text cannot be empty!")
-    private String text;
+    private String message;
 }
