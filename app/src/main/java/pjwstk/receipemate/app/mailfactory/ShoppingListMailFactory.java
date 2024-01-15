@@ -11,7 +11,7 @@ public class ShoppingListMailFactory implements MailFactory {
         Mail mail = new Mail();
         mail.setTo(emailRequest.getTo());
         mail.setSubject("Twoja Lista Zakupów Gotowa do Działania!");
-        mail.setText(emailRequest.getText());
+        mail.setText(emailRequest.getMessage());
 
         return mail;
     }
