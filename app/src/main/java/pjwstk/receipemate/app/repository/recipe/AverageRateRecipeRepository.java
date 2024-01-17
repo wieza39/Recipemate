@@ -10,6 +10,7 @@ import pjwstk.receipemate.app.entity.Recipe;
 import pjwstk.receipemate.app.model.AverageRateRecipe;
 
 import org.springframework.data.domain.Pageable;
+import pjwstk.receipemate.app.model.AverageRateRecipeInterface;
 
 import java.util.Optional;
 
@@ -30,15 +31,14 @@ public interface AverageRateRecipeRepository extends JpaRepository<Recipe, Long>
             "ORDER BY AVG(rr.value) DESC, r.id")
     Optional<AverageRateRecipe> findById(@Param(value = "id") long id);
 
-    @Query(value = "SELECT new pjwstk.receipemate.app.model.AverageRateRecipe(r, AVG(rr.value)) " +
+    @Query(value = "SELECT r as recipe, AVG(rr.value) as averageRate " +
             "FROM Recipe r " +
             "LEFT JOIN RateRecipe rr ON rr.recipe = r " +
             "WHERE r.category = :category " +
-            "GROUP BY r.id " +
-            "ORDER BY AVG(rr.value) DESC, r.id")
-    Page<AverageRateRecipe> getByCategoryId(
-            Pageable pageable,
-            @Param(value = "category") Category category
+            "GROUP BY r.id")
+    Page<AverageRateRecipeInterface> getByCategoryId(
+            @Param(value = "category") Category category,
+            Pageable pageable
     );
 
     @Query(value = "SELECT new pjwstk.receipemate.app.model.AverageRateRecipe(r, AVG(rr.value)) " +

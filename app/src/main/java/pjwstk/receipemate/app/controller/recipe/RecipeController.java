@@ -2,6 +2,7 @@ package pjwstk.receipemate.app.controller.recipe;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pjwstk.receipemate.app.request.RecipeFindRequest;
 import pjwstk.receipemate.app.view.page.PageView;
@@ -26,7 +27,7 @@ public class RecipeController {
 
     @GetMapping("/{id}")
     @ResponseBody
-    public RecipeDetailedView find(
+    public ResponseEntity<RecipeDetailedView> find(
             @PathVariable(value = "id") long id,
             @RequestBody(required = false) RecipeFindRequest recipeFindRequest
     ) {
@@ -40,17 +41,17 @@ public class RecipeController {
                 0,
                 relatedRecipesLimit
         );
-        return this.recipeDetailedViewRepository.find(id, pageable);
+        return ResponseEntity.ok(this.recipeDetailedViewRepository.find(id, pageable));
     }
 
     @GetMapping("/search")
     @ResponseBody
-    public PageView getByPhrase(
+    public ResponseEntity<PageView> getByPhrase(
             @RequestParam String phrase,
             @RequestParam(defaultValue = "1") int pageNumber,
             @RequestParam(defaultValue = "12") int limit
     ) {
         Pageable pageable = PageRequest.of(pageNumber - 1, limit);
-        return this.recipeViewRepository.getByPhrase(phrase, pageable);
+        return ResponseEntity.ok(this.recipeViewRepository.getByPhrase(phrase, pageable));
     }
 }

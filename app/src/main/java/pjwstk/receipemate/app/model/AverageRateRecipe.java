@@ -3,11 +3,10 @@ package pjwstk.receipemate.app.model;
 import lombok.Getter;
 import lombok.Setter;
 import pjwstk.receipemate.app.entity.Recipe;
-import pjwstk.receipemate.app.entity.RecipeImage;
 
 @Getter
 @Setter
-public class AverageRateRecipe {
+public class AverageRateRecipe implements AverageRateRecipeInterface {
     private Recipe recipe;
     private Double averageRate;
 
