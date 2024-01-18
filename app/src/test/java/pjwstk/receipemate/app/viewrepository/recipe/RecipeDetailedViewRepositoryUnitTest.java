@@ -23,8 +23,7 @@ import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyLong;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -39,7 +38,7 @@ class RecipeDetailedViewRepositoryUnitTest {
     private RecipeDetailedViewRepository recipeDetailedViewRepository;
 
     @Test
-    public void shouldReturnNotFoundException() {
+    public void shouldFindByIdMethodReturnNotFoundException() {
         // given
         Pageable pageable = Pageable.unpaged();
 
@@ -52,7 +51,7 @@ class RecipeDetailedViewRepositoryUnitTest {
     }
 
     @Test
-    public void shouldReturnValidRecipeDetailedView() {
+    public void shouldFindMethodReturnValidRecipeDetailedView() {
         // given
         Pageable pageable = Pageable.unpaged();
 
@@ -62,7 +61,7 @@ class RecipeDetailedViewRepositoryUnitTest {
 
         List<AverageRateRecipe> relatedRecipesList = List.of(new AverageRateRecipe(null, null), new AverageRateRecipe(null, null));
         Page<AverageRateRecipe> relatedRecipes = new PageImpl<>(relatedRecipesList);
-        when(this.averageRateRecipeRepository.getRelated(recipe.get().getRecipe(), any(Pageable.class))).thenReturn(relatedRecipes);
+        when(this.averageRateRecipeRepository.getRelated(eq(recipe.get().getRecipe()), any(Pageable.class))).thenReturn(relatedRecipes);
 
         List<RecipeView> expectedRecipesViews = List.of(new RecipeView());
         when(this.recipeViewFactory.makeList(relatedRecipes.getContent())).thenReturn(expectedRecipesViews);
