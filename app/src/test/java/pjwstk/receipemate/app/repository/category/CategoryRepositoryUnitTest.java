@@ -2,16 +2,12 @@ package pjwstk.receipemate.app.repository.category;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import pjwstk.receipemate.app.entity.Category;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class CategoryRepositoryUnitTest {
 
@@ -19,14 +15,11 @@ public class CategoryRepositoryUnitTest {
     private CategoryRepository categoryRepository;
 
     @Test
-    public void getWithRecipes() {
-        //given
-        //data in test_database
+    public void shouldGetWithRecipesMethodReturnEmptyContent() {
         //when
         Page<Category> result = categoryRepository.getWithRecipes(PageRequest.of(0,5));
 
         //then
-        assertNotNull(result);
-        assertFalse(result.getContent().isEmpty());
+        assertThat(result.getContent().isEmpty()).isTrue();
     }
 }
