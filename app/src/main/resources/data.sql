@@ -9,51 +9,51 @@ INSERT INTO recipemate.recipe (category_id, created_at, id, updated_at, descript
                                portion_count)
 VALUES (1, '2023-01-01 12:00:00.000000', 1, '2023-01-01 14:30:00.000000', '<p>Tradycyjne włoskie danie, które zawsze smakuje wyjątkowo. Pyszne spaghetti podane z sosem Bolognese, przygotowanym z mięsa mielonego, pomidorów, cebuli i przypraw.</p>
 <p>To danie o średnim stopniu trudności sprawi, że poczujesz się jak w prawdziwej włoskiej trattorii.</p>',
-        'Średni',
+        'MEDIUM',
         'Spaghetti Bolognese', '45', 3),
        (2, '2023-01-02 10:30:00.000000', 2, '2023-01-02 12:45:00.000000', '<p>Dragon Roll Sushi to wyjątkowe danie kuchni azjatyckiej. Sushi zawinięte w kształt smoka z delikatnym nadzieniem rybnym, awokado i ogórkiem. Podane z sosem sojowo-imbirowym, to danie z pewnością oczaruje smakoszy kuchni orientalnej.</p>
 <p>Przygotowanie tego dania jest trudniejsze, ale efekt z pewnością wynagrodzi wysiłek.</p>',
-        'Trudny', 'Dragon Roll Sushi',
+        'HARD', 'Dragon Roll Sushi',
         '60', 2),
        (3, '2023-01-03 15:20:00.000000', 3, '2023-01-03 17:10:00.000000', '<p>Rogaliki maślane to pyszne i puszyste ciasteczka, które rozpływają się w ustach. Idealne na śniadanie lub podwieczorek. Przygotowanie ich jest łatwe i przyjemne, a efekt z pewnością zachwyci Twoje podniebienie.</p>
 <p>Zapraszamy do spróbowania tego łatwego przepisu na słodki smakołyk!</p>',
-        'Łatwy', 'Rogaliki maślane',
+        'EASY', 'Rogaliki maślane',
         '120', 5),
        (1, '2023-01-04 09:45:00.000000', 4, '2023-01-04 11:30:00.000000', '<p>Pizza Margherita to klasyczne danie włoskie, które zachwyca prostotą i smakiem. Delikatne ciasto, pomidory, mozzarella i świeża bazylia tworzą kompozycję idealną dla miłośników kuchni śródziemnomorskiej.</p>
 <p>Przygotowanie tego dania o średnim stopniu trudności nie zajmie Ci wiele czasu, a efekt z pewnością będzie smakowity.</p>',
-        'Średni',
+        'MEDIUM',
         'Pizza Margherita', '30', 4),
        (2, '2023-01-05 14:15:00.000000', 5, '2023-01-05 16:00:00.000000', '<p>Kurczak Teryiaki z ryżem to danie inspirowane kuchnią japońską. Soczyste kawałki kurczaka w aromatycznym sosie Teryiaki, podane z ryżem - to połączenie smaków, które z pewnością przypadnie do gustu miłośnikom kuchni azjatyckiej.</p>
 <p>Przygotowanie tego łatwego dania zajmie zaledwie 40 minut!</p>',
-        'Łatwy',
+        'EASY',
         'Kurczak Teryiaki z ryżem', '40', 2),
        (3, '2023-01-06 11:00:00.000000', 6, '2023-01-06 13:20:00.000000', '<p>Mus czekoladowy to pyszny deser, który zadowoli wszystkich łasuchów. Delikatny mus z gorzkiej czekolady podany w eleganckich kieliszkach to doskonały sposób na zakończenie obiadu lub romantyczną kolację.</p>
 <p>Choć przygotowanie musu jest trudniejsze, efekt z pewnością wynagrodzi wszelkie starania.</p>',
-        'Łatwy',
+        'EASY',
         'Mus czekoladowy', '90', 6),
        (1, '2023-01-07 16:30:00.000000', 7, '2023-01-07 18:45:00.000000', '<p>Lasagna z wołowiną to klasyczne danie kuchni włoskiej, które uwodzi aromatem i smakiem. Warstwy makaronu, mięsa wołowego, sosu pomidorowego i sera tworzą niezapomnianą kompozycję.</p>
 <p>Przygotowanie tego dania o średnim stopniu trudności z pewnością będzie przyjemnością dla miłośników kuchni włoskiej.</p>',
-        'Średni', 'Lasagna z wołowiną',
+        'MEDIUM', 'Lasagna z wołowiną',
         '75', 4),
        (2, '2023-01-08 12:45:00.000000', 8, '2023-01-08 14:15:00.000000', '<p>Łosoś w sojowo-imbirowym sosie to danie kuchni azjatyckiej, które wyróżnia się intensywnym smakiem i aromatem. Soczysty łosoś podany z delikatnym sosem sojowo-imbirowym to prawdziwa uczta dla podniebienia.</p>
 <p>Przygotowanie tego łatwego dania zajmie zaledwie 35 minut!</p>',
-        'Łatwy',
+        'EASY',
         'Łosoś w sojowo-imbirowym sosie', '35', 2),
        (3, '2023-01-09 10:00:00.000000', 9, '2023-01-09 11:45:00.000000', '<p>Sernik z malinami to pyszny deser, który zachwyci wszystkich miłośników serników. Delikatne ciasto serowe połączone z kwaśnymi malinami to doskonała propozycja na słodki poczęstunek.</p>
 <p>Przygotowanie tego dania o średnim stopniu trudności zajmie około 60 minut.</p>',
-        'Średni',
+        'MEDIUM',
         'Sernik z malinami', '60', 3),
        (1, '2023-01-10 13:20:00.000000', 10, '2023-01-10 15:00:00.000000', '<p>Pizza wegetariańska to smaczna propozycja dla miłośników warzyw. Delikatne ciasto, sos pomidorowy, świeże warzywa i aromatyczne zioła tworzą idealną kombinację smakową.</p>
 <p>Przygotowanie tej wegetariańskiej pizzy o łatwym stopniu trudności zajmie zaledwie 40 minut!</p>',
-        'Łatwy',
+        'EASY',
         'Pizza wegetariańska', '40', 4),
        (2, '2023-01-11 08:30:00.000000', 11, '2023-01-11 10:15:00.000000', '<p>Mieszany zestaw tempury to danie kuchni japońskiej, które zachwyca delikatnością i chrupkością. Krewetki, kalamary, warzywa - wszystko obtoczone w cienkim cieście i smażone na złoto.</p>
 <p>Przygotowanie tego dania o trudnym stopniu trudności zajmie około 75 minut, ale efekt z pewnością będzie wyjątkowy.</p>',
-        'Trudny',
+        'HARD',
         'Mieszany zestaw tempury', '75', 5),
        (3, '2023-01-12 14:45:00.000000', 12, '2023-01-12 16:30:00.000000', '<p>Jabłecznik to tradycyjne ciasto, które zawsze cieszy się popularnością. Delikatne ciasto poddane magii jabłek, cynamonu i cukru tworzy pyszny deser idealny na każdą okazję.</p>
 <p>Przygotowanie tego dania o średnim stopniu trudności zajmie około 50 minut.</p>',
-        'Średni', 'Jabłecznik', '50',
+        'MEDIUM', 'Jabłecznik', '50',
         3);
 
 
@@ -233,7 +233,7 @@ VALUES (1, 'szklanki'),
        (10, 'ml'),
        (11, 'szczypta'),
        (12, 'liść'),
-       (13, 'pęczek')
+       (13, 'pęczek');
 
 INSERT INTO recipe_ingredient (count, ingredient_id, recipe_id, measure_id)
 VALUES (150, 11, 1, 2),
@@ -296,7 +296,7 @@ VALUES (450, 39, 5, 2),
        (1, 7, 5, 7),
        (0.5, 46, 5, 1),
        (1, 47, 5, 7),
-       (2, 31, 5, 6),
+       (2, 31, 5, 6);
 
 
 INSERT INTO recipe_ingredient (count, ingredient_id, recipe_id, measure_id)
@@ -317,7 +317,7 @@ VALUES (400, 34, 7, 2),
        (1, 18, 7, 6),
        (1, 37, 7, 7),
        (1, 53, 7, 7),
-       (2, 5, 7, 5),
+       (2, 5, 7, 5);
 
 INSERT INTO recipe_ingredient (count, ingredient_id, recipe_id, measure_id)
 VALUES (500, 54, 8, 2),
@@ -349,22 +349,75 @@ VALUES (1500, 61, 12, 2),
 
 -- Insert records into the recipe_step table
 INSERT INTO recipe_step (step_order, title, description, recipe_id)
-VALUES (1, 'Step 1', 'Description for step 1 for Product 1', 1),
-       (2, 'Step 2', 'Description for step 2 for Product 1', 1),
-       (3, 'Step 3', 'Description for step 3 for Product 1', 1),
+VALUES
+         (1, 'Przygotowanie sosu', 'Smaż cebulę i czosnek na oliwie.', 1),
+         (2, 'Przygotowanie sosu', 'Dodaj mięso mielone i smaż, aż będzie dobrze przypieczone.', 1),
+         (3, 'Przygotowanie sosu', 'Wlej pomidory, koncentrat pomidorowy, zioła, sól i pieprz.', 1),
+         (4, 'Przygotowanie sosu', 'Gotuj sos na wolnym ogniu przez co najmniej 30 minut.', 1),
+         (5, 'Gotowanie makaronu', 'Zagotuj osoloną wodę.', 1),
+         (6, 'Gotowanie makaronu', 'Wrzuć makaron do gotującej się wody i gotuj, aż będzie al dente.', 1),
+         (7, 'Gotowanie makaronu', 'Odcedź makaron.', 1),
+         (8, 'Podawanie', 'Nałóż sos Bolognese na ugotowany makaron.', 1),
+         (9, 'Podawanie', 'Posyp startym parmezanem i posiekanym świeżym bazylią.', 1),
 
-       (1, 'Step 1', 'Description for step 1 for Product 2', 2),
-       (2, 'Step 2', 'Description for step 2 for Product 2', 2),
-       (3, 'Step 3', 'Description for step 3 for Product 2', 2),
+         (1, 'Przygotowanie ryżu', 'Umyj ryż kilka razy, aż woda będzie przeźroczysta.', 2),
+         (2, 'Przygotowanie ryżu', 'Gotuj ryż zgodnie z instrukcjami na opakowaniu.', 2),
+         (3, 'Przygotowanie ryżu', 'W misce wymieszaj ocet ryżowy, cukier i sól. Dodaj do ugotowanego ryżu i wymieszaj.', 2),
+         (4, 'Przygotowanie nadzienia', 'Umieść na matce do sushi arkusz nori.', 7),
+         (5, 'Przygotowanie nadzienia', 'Rozłóż równomiernie ryż na nori, zostawiając wolne miejsce z jednego końca.', 2),
+         (6, 'Przygotowanie nadzienia', 'Nałóż kawałek łososia, awokado i ogórka na środek ryżu.', 2),
+         (7, 'Składanie rolki', 'Zwilż wolny koniec nori wodą.', 2),
+         (8, 'Składanie rolki', 'Zwijaj matę, zaczynając od nadzienia.', 2),
+         (9, 'Składanie rolki', 'Sklej koniec nori, aby utworzyć rolkę.', 2),
+         (10, 'Krojenie i podawanie', 'Pokrój rolkę na kawałki.', 2),
+         (11, 'Krojenie i podawanie', 'Podawaj z sosem sojowym, wasabi i marynowanym imbirowym.', 2),
 
-       (1, 'Step 1', 'Description for step 1 for Product 3', 3),
-       (2, 'Step 2', 'Description for step 2 for Product 3', 3),
-       (3, 'Step 3', 'Description for step 3 for Product 3', 3),
+         (1, 'Przygotowanie ciasta', 'W misce wymieszaj mąkę, cukier i sól.', 3),
+         (2, 'Przygotowanie ciasta', 'Dodaj zimne kawałki masła i palcami wymieszaj, aż powstanie kruszonka.', 3),
+         (3, 'Przygotowanie ciasta', 'Dodaj jajko i wodę, zagnieć ciasto.', 3),
+         (4, 'Formowanie rogalików', 'Rozwałkuj ciasto na prostokąt.', 3),
+         (5, 'Formowanie rogalików', 'Nałóż masło na połowę ciasta, złożoną część przykryj resztą ciasta.', 3),
+         (6, 'Formowanie rogalików', 'Ponownie rozwałkuj ciasto i złóż na pół.', 3),
+         (7, 'Formowanie rogalików', 'Powtórz ten krok kilka razy.', 3),
+         (8, 'Pieczenie', 'Rozwałkuj ciasto na koło i pokrój na trójkąty.', 3),
+         (9, 'Pieczenie', 'Zwiń trójkąty, tworząc kształt rogalika.', 3),
+         (10, 'Pieczenie', 'Umieść rogaliki na blasze i piecz w piekarniku do zrumienienia.', 3),
+         (11, 'Podawanie', 'Posyp rogaliki cukrem pudrem.', 3),
+         (12, 'Podawanie', 'Podawaj ciepłe jako smaczne dodatki do kawy.', 3),
 
-       (1, 'Step 1', 'Description for step 1 for Product 4', 4),
-       (2, 'Step 2', 'Description for step 2 for Product 4', 4),
-       (3, 'Step 3', 'Description for step 3 for Product 4', 4),
+         (1, 'Przygotowanie ciasta', 'Przygotuj ciasto z mąki, drożdży, soli, cukru i wody.', 4),
+         (2, 'Wyrośnięcie ciasta', 'Pozostaw ciasto do wyrośnięcia przez 1 godzinę.', 4),
+         (3, 'Rozwałkowanie ciasta', 'Rozwałkuj ciasto i ułóż je na blasze do pieczenia.', 4),
+         (4, 'Nałóż sos i dodatki', 'Nałóż sos pomidorowy, plasterki pomidora i mozzarellę.', 4),
+         (5, 'Pieczenie', 'Piecz w piekarniku 200 stopni przez 15-20 minut.', 4),
 
-       (1, 'Step 1', 'Description for step 1 for Product 5', 5),
-       (2, 'Step 2', 'Description for step 2 for Product 5', 5),
-       (3, 'Step 3', 'Description for step 3 for Product 5', 5);
+         (1, 'Przygotowanie kurczaka', 'Pokrój kurczaka na kawałki i podsmaż na patelni.', 5),
+         (2, 'Przygotowanie sosu teriyaki', 'Dodaj sos teriyaki, sos sojowy, miód i czosnek.', 5),
+         (3, 'Gotowanie kurczaka', 'Gotuj na wolnym ogniu, aż kurczak będzie dobrze nasączony sosem.', 5),
+         (4, 'Podawanie', 'Podawaj z ugotowanym ryżem.', 5),
+
+         (1, 'Rozpuszczenie czekolady', 'Rozpuść czekoladę w kąpieli wodnej.', 6),
+         (2, 'Ubijanie śmietany', 'Ubij śmietanę na sztywno.', 6),
+         (3, 'Wymieszanie składników', 'Delikatnie wymieszaj czekoladę z ubitą śmietaną.', 6),
+         (4, 'Schładzanie', 'Umieść masę w pucharkach i schładzaj przez kilka godzin.', 6),
+
+         (1, 'Przygotowanie sosu mięsnego', 'Usmaż cebulę, czosnek i mięso mielone na patelni.', 7),
+         (2, 'Dodanie pomidorów i przypraw', 'Dodaj pomidory, sos pomidorowy, zioła i przyprawy.', 7),
+         (3, 'Warstwowanie', 'Warstwuj sos mięsny, makaron lasagnę i sos beszamelowy w formie.', 7),
+         (4, 'Pieczenie', 'Piecz w piekarniku przez 30-40 minut.', 7),
+
+         (1, 'Marynowanie łososia', 'Skrop filety łososia sosem sojowym, imbirem i czosnkiem.', 8),
+         (2, 'Pieczenie', 'Piecz łososia w piekarniku przez 15 minut.', 8),
+         (3, 'Podawanie', 'Podawaj z sosem sojowym, ryżem i warzywami.', 8),
+
+         (1, 'Przygotowanie ciasta', 'Przygotuj ciasto z herbatników i masła.', 9),
+         (2, 'Układanie ciasta w formie', 'Ułóż ciasto na dnie formy.', 9),
+         (3, 'Przygotowanie masy serowej', 'Wymieszaj ser biały z cukrem i jajkami.', 9),
+         (4, 'Wlewanie masy na ciasto', 'Wlej masę serową na ciasto i dodaj maliny.', 9),
+         (5, 'Pieczenie', 'Piecz w piekarniku przez 45-50 minut.', 9),
+
+         (1, 'Przygotowanie jabłek', 'Obierz i pokrój jabłka.', 10),
+         (2, 'Wymieszanie z przyprawami', 'Wymieszaj z cukrem, cynamonem i sokiem z cytryny.', 10),
+         (3, 'Przygotowanie ciasta', 'Przygotuj ciasto z mąki, masła, jajek i proszku do pieczenia.', 10),
+         (4, 'Wlewanie masy na ciasto', 'Wylej masę do formy, ułóż jabłka na wierzchu.', 10),
+         (5, 'Pieczenie', 'Piecz w piekarniku przez 40-45 minut.', 10);
