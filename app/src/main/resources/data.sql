@@ -215,7 +215,10 @@ VALUES (1, 'Pomidor'),
        (58, 'Kolędra'),
        (59, 'Proszek do pieczenia'),
        (60, 'Maliny'),
-       (61, 'Jabłko');
+       (61, 'Jabłko'),
+       (62, 'Bataty'),
+       (63, 'Cukinia');
+
 
 
 
@@ -346,6 +349,24 @@ VALUES (1500, 61, 12, 2),
        (0.25, 35, 12, 1),
        (2, 59, 12, 7);
 
+INSERT INTO recipe_ingredient (count, ingredient_id, recipe_id, measure_id)
+VALUES (150, 34, 11, 2),
+       (5, 59, 11, 2),
+       (200, 62, 11, 2),
+       (200, 63, 11, 2),
+       (250, 26, 11, 2),
+       (0.25, 41, 11, 1);
+
+INSERT INTO recipe_ingredient (count, ingredient_id, recipe_id, measure_id)
+VALUES (300, 34, 12, 2),
+       (7, 32, 12, 2),
+       (200, 30, 12, 10),
+       (200, 21, 12, 2),
+       (150, 45, 12, 2),
+       (100, 4, 12, 2),
+       (2, 5, 12, 5),
+       (200, 38, 12, 2);
+
 
 -- Insert records into the recipe_step table
 INSERT INTO recipe_step (step_order, title, description, recipe_id)
@@ -416,8 +437,24 @@ VALUES
          (4, 'Wlewanie masy na ciasto', 'Wlej masę serową na ciasto i dodaj maliny.', 9),
          (5, 'Pieczenie', 'Piecz w piekarniku przez 45-50 minut.', 9),
 
-         (1, 'Przygotowanie jabłek', 'Obierz i pokrój jabłka.', 10),
-         (2, 'Wymieszanie z przyprawami', 'Wymieszaj z cukrem, cynamonem i sokiem z cytryny.', 10),
-         (3, 'Przygotowanie ciasta', 'Przygotuj ciasto z mąki, masła, jajek i proszku do pieczenia.', 10),
-         (4, 'Wlewanie masy na ciasto', 'Wylej masę do formy, ułóż jabłka na wierzchu.', 10),
-         (5, 'Pieczenie', 'Piecz w piekarniku przez 40-45 minut.', 10);
+         (1, 'Przygotowanie ciasta', 'Przygotuj ciasto z mąki, drożdży, soli, cukru i wody.', 10),
+         (2, 'Wyrośnięcie ciasta', 'Pozostaw ciasto do wyrośnięcia przez 1 godzinę.', 10),
+         (3, 'Rozwałkowanie ciasta', 'Rozwałkuj ciasto i ułóż je na blasze do pieczenia.', 10),
+         (4, 'Nałóż sos pomidorowy', 'Rozprowadź równomiernie sos pomidorowy na cieście.', 10),
+         (5, 'Dodaj warzywa', 'Posyp warzywami takimi jak pomidory, papryka, cebula, itp.', 10),
+         (6, 'Posyp serem', 'Rozsyp równomiernie starty ser na wierzchu.', 10),
+         (7, 'Pieczenie', 'Piecz w piekarniku nagrzanym do 220 stopni przez 15-20 minut.', 10),
+         (8, 'Podawanie', 'Podawaj i ciesz się pyszną wegetariańską pizzą!', 10),
+
+         (1, 'Przygotowanie tempury', 'Przygotuj mieszankę tempury wg instrukcji na opakowaniu.', 11),
+         (2, 'Przygotowanie składników', 'Pokrój warzywa (np. bataty, cukinię) i krewetki na kawałki.', 11),
+         (3, 'Namaczanie w tempurze', 'Maczaj kawałki warzyw i krewetek w przygotowanej tempurze.', 11),
+         (4, 'Smażenie', 'Smaż kawałki w tempurze na głębokim oleju, aż staną się złociste.', 11),
+         (5, 'Odsączanie', 'Odsącz tempurę na papierowym ręczniku, aby pozbyć się nadmiaru oleju.', 11),
+         (6, 'Podawanie', 'Podawaj tempurę z sosem sojowym lub słodko-kwaśnym, ciesz się pysznym zestawem tempury!', 11),
+
+         (1, 'Przygotowanie jabłek', 'Obierz i pokrój jabłka.', 12),
+         (2, 'Wymieszanie z przyprawami', 'Wymieszaj z cukrem, cynamonem i sokiem z cytryny.', 12),
+         (3, 'Przygotowanie ciasta', 'Przygotuj ciasto z mąki, masła, jajek i proszku do pieczenia.', 12),
+         (4, 'Wlewanie masy na ciasto', 'Wylej masę do formy, ułóż jabłka na wierzchu.', 12),
+         (5, 'Pieczenie', 'Piecz w piekarniku przez 40-45 minut.', 12);
