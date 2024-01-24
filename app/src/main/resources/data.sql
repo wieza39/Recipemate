@@ -219,10 +219,6 @@ VALUES (1, 'Pomidor'),
        (62, 'Bataty'),
        (63, 'Cukinia');
 
-
-
-
-
 INSERT INTO measure (id, name)
 VALUES (1, 'szklanki'),
        (2, 'gramy'),
@@ -301,7 +297,6 @@ VALUES (450, 39, 5, 2),
        (1, 47, 5, 7),
        (2, 31, 5, 6);
 
-
 INSERT INTO recipe_ingredient (count, ingredient_id, recipe_id, measure_id)
 VALUES (1, 48, 6, 1),
        (250, 49, 6, 2),
@@ -358,15 +353,14 @@ VALUES (150, 34, 11, 2),
        (0.25, 41, 11, 1);
 
 INSERT INTO recipe_ingredient (count, ingredient_id, recipe_id, measure_id)
-VALUES (300, 34, 12, 2),
-       (7, 32, 12, 2),
-       (200, 30, 12, 10),
-       (200, 21, 12, 2),
-       (150, 45, 12, 2),
-       (100, 4, 12, 2),
-       (2, 5, 12, 5),
-       (200, 38, 12, 2);
-
+VALUES (300, 34, 10, 2),
+       (7, 32, 10, 2),
+       (200, 30, 10, 10),
+       (200, 21, 10, 2),
+       (150, 45, 10, 2),
+       (100, 4, 10, 2),
+       (2, 5, 10, 5),
+       (200, 38, 10, 2);
 
 -- Insert records into the recipe_step table
 INSERT INTO recipe_step (step_order, title, description, recipe_id)
